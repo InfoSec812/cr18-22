@@ -294,7 +294,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    openshift.selector('bc', PROJECT_NAME).startBuild("--from-file=target/${PROJECT_NAME}.jar", '--wait')
+                    openshift.selector('bc', PROJECT_NAME).startBuild("--from-file=target/${PROJECT_NAME}-thorntail.jar", '--wait')
                 }
             }
         }
