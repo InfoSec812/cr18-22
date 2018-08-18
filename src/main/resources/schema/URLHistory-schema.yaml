@@ -1,0 +1,1246 @@
+--- !<object>
+id: "urn:jsonschema:org:mitre:cybox:objects:URLHistory"
+properties:
+  customProperties: !<object>
+    id: "urn:jsonschema:org:mitre:cybox:common_2:CustomPropertiesType"
+    properties:
+      properties: !<array>
+        items: !<object>
+          id: "urn:jsonschema:org:mitre:cybox:common_2:Property"
+          properties:
+            value: !<any> {}
+            id: !<string> {}
+            idref: !<string> {}
+            datatype: !<string>
+              enum:
+              - "STRING"
+              - "INT"
+              - "FLOAT"
+              - "DATE"
+              - "POSITIVE_INTEGER"
+              - "UNSIGNED_INT"
+              - "DATE_TIME"
+              - "TIME"
+              - "BOOLEAN"
+              - "NAME"
+              - "LONG"
+              - "UNSIGNED_LONG"
+              - "DURATION"
+              - "DOUBLE"
+              - "NON_NEGATIVE_INTEGER"
+              - "HEX_BINARY"
+              - "ANY_URI"
+              - "BASE_64_BINARY"
+              - "I_PV_4_ADDRESS"
+              - "I_PV_6_ADDRESS"
+              - "HOST_NAME"
+              - "MAC_ADDRESS"
+              - "DOMAIN_NAME"
+              - "URI"
+              - "TIME_ZONE"
+              - "OCTAL"
+              - "BINARY"
+              - "BIN_HEX"
+              - "SUBNET_MASK"
+              - "UUID_GUID"
+              - "COLLECTION"
+              - "CVE_ID"
+              - "CWE_ID"
+              - "CAPEC_ID"
+              - "CCE_ID"
+              - "CPE_NAME"
+            appearsRandom: !<boolean> {}
+            isObfuscated: !<boolean> {}
+            obfuscationAlgorithmRef: !<string> {}
+            isDefanged: !<boolean> {}
+            defangingAlgorithmRef: !<string> {}
+            refangingTransformType: !<string> {}
+            refangingTransform: !<string> {}
+            observedEncoding: !<string> {}
+            condition: !<string>
+              enum:
+              - "EQUALS"
+              - "DOES_NOT_EQUAL"
+              - "CONTAINS"
+              - "DOES_NOT_CONTAIN"
+              - "STARTS_WITH"
+              - "ENDS_WITH"
+              - "GREATER_THAN"
+              - "GREATER_THAN_OR_EQUAL"
+              - "LESS_THAN"
+              - "LESS_THAN_OR_EQUAL"
+              - "INCLUSIVE_BETWEEN"
+              - "EXCLUSIVE_BETWEEN"
+              - "FITS_PATTERN"
+              - "BITWISE_AND"
+              - "BITWISE_OR"
+              - "BITWISE_XOR"
+            isCaseSensitive: !<boolean> {}
+            applyCondition: !<string>
+              enum:
+              - "ANY"
+              - "ALL"
+              - "NONE"
+            delimiter: !<string> {}
+            bitMask: !<array>
+              items: !<integer> {}
+            patternType: !<string>
+              enum:
+              - "REGEX"
+              - "BINARY"
+              - "X_PATH"
+            regexSyntax: !<string> {}
+            hasChanged: !<boolean> {}
+            trend: !<boolean> {}
+            name: !<string> {}
+            description: !<string> {}
+  objectReference: !<string> {}
+  browserInformation: !<object>
+    id: "urn:jsonschema:org:mitre:cybox:common_2:ToolInformationType"
+    properties:
+      name: !<string> {}
+      types: !<array>
+        items: !<object>
+          id: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+          properties:
+            value: !<any> {}
+            condition: !<string>
+              enum:
+              - "EQUALS"
+              - "DOES_NOT_EQUAL"
+              - "CONTAINS"
+              - "DOES_NOT_CONTAIN"
+              - "STARTS_WITH"
+              - "ENDS_WITH"
+              - "GREATER_THAN"
+              - "GREATER_THAN_OR_EQUAL"
+              - "LESS_THAN"
+              - "LESS_THAN_OR_EQUAL"
+              - "INCLUSIVE_BETWEEN"
+              - "EXCLUSIVE_BETWEEN"
+              - "FITS_PATTERN"
+              - "BITWISE_AND"
+              - "BITWISE_OR"
+              - "BITWISE_XOR"
+            isCaseSensitive: !<boolean> {}
+            applyCondition: !<string>
+              enum:
+              - "ANY"
+              - "ALL"
+              - "NONE"
+            delimiter: !<string> {}
+            bitMask: !<array>
+              items: !<integer> {}
+            patternType: !<string>
+              enum:
+              - "REGEX"
+              - "BINARY"
+              - "X_PATH"
+            regexSyntax: !<string> {}
+            hasChanged: !<boolean> {}
+            trend: !<boolean> {}
+            vocabName: !<string> {}
+            vocabReference: !<string> {}
+      description: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+        properties:
+          value: !<string> {}
+          structuringFormat: !<string> {}
+      references: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:common_2:ToolReferencesType"
+        properties:
+          references: !<array>
+            items: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:common_2:ToolReferenceType"
+              properties:
+                value: !<string> {}
+                referenceType: !<string>
+                  enum:
+                  - "DOCUMENTATION"
+                  - "SOURCE"
+                  - "DOWNLOAD"
+                  - "EXECUTE"
+                  - "OTHER"
+      vendor: !<string> {}
+      version: !<string> {}
+      servicePack: !<string> {}
+      toolSpecificData: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:common_2:ToolSpecificDataType"
+      toolHashes: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:common_2:HashListType"
+        properties:
+          hashes: !<array>
+            items: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:common_2:HashType"
+              properties:
+                type: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                fuzzyHashValue: !<object>
+                  id: "urn:jsonschema:org:mitre:cybox:common_2:FuzzyHashValueType"
+                  properties:
+                    value: !<any> {}
+                    id: !<string> {}
+                    idref: !<string> {}
+                    datatype: !<string>
+                      enum:
+                      - "STRING"
+                      - "INT"
+                      - "FLOAT"
+                      - "DATE"
+                      - "POSITIVE_INTEGER"
+                      - "UNSIGNED_INT"
+                      - "DATE_TIME"
+                      - "TIME"
+                      - "BOOLEAN"
+                      - "NAME"
+                      - "LONG"
+                      - "UNSIGNED_LONG"
+                      - "DURATION"
+                      - "DOUBLE"
+                      - "NON_NEGATIVE_INTEGER"
+                      - "HEX_BINARY"
+                      - "ANY_URI"
+                      - "BASE_64_BINARY"
+                      - "I_PV_4_ADDRESS"
+                      - "I_PV_6_ADDRESS"
+                      - "HOST_NAME"
+                      - "MAC_ADDRESS"
+                      - "DOMAIN_NAME"
+                      - "URI"
+                      - "TIME_ZONE"
+                      - "OCTAL"
+                      - "BINARY"
+                      - "BIN_HEX"
+                      - "SUBNET_MASK"
+                      - "UUID_GUID"
+                      - "COLLECTION"
+                      - "CVE_ID"
+                      - "CWE_ID"
+                      - "CAPEC_ID"
+                      - "CCE_ID"
+                      - "CPE_NAME"
+                    appearsRandom: !<boolean> {}
+                    isObfuscated: !<boolean> {}
+                    obfuscationAlgorithmRef: !<string> {}
+                    isDefanged: !<boolean> {}
+                    defangingAlgorithmRef: !<string> {}
+                    refangingTransformType: !<string> {}
+                    refangingTransform: !<string> {}
+                    observedEncoding: !<string> {}
+                    condition: !<string>
+                      enum:
+                      - "EQUALS"
+                      - "DOES_NOT_EQUAL"
+                      - "CONTAINS"
+                      - "DOES_NOT_CONTAIN"
+                      - "STARTS_WITH"
+                      - "ENDS_WITH"
+                      - "GREATER_THAN"
+                      - "GREATER_THAN_OR_EQUAL"
+                      - "LESS_THAN"
+                      - "LESS_THAN_OR_EQUAL"
+                      - "INCLUSIVE_BETWEEN"
+                      - "EXCLUSIVE_BETWEEN"
+                      - "FITS_PATTERN"
+                      - "BITWISE_AND"
+                      - "BITWISE_OR"
+                      - "BITWISE_XOR"
+                    isCaseSensitive: !<boolean> {}
+                    applyCondition: !<string>
+                      enum:
+                      - "ANY"
+                      - "ALL"
+                      - "NONE"
+                    delimiter: !<string> {}
+                    bitMask: !<array>
+                      items: !<integer> {}
+                    patternType: !<string>
+                      enum:
+                      - "REGEX"
+                      - "BINARY"
+                      - "X_PATH"
+                    regexSyntax: !<string> {}
+                    hasChanged: !<boolean> {}
+                    trend: !<boolean> {}
+                simpleHashValue: !<object>
+                  id: "urn:jsonschema:org:mitre:cybox:common_2:SimpleHashValueType"
+                  properties:
+                    value: !<any> {}
+                    id: !<string> {}
+                    idref: !<string> {}
+                    datatype: !<string>
+                      enum:
+                      - "STRING"
+                      - "INT"
+                      - "FLOAT"
+                      - "DATE"
+                      - "POSITIVE_INTEGER"
+                      - "UNSIGNED_INT"
+                      - "DATE_TIME"
+                      - "TIME"
+                      - "BOOLEAN"
+                      - "NAME"
+                      - "LONG"
+                      - "UNSIGNED_LONG"
+                      - "DURATION"
+                      - "DOUBLE"
+                      - "NON_NEGATIVE_INTEGER"
+                      - "HEX_BINARY"
+                      - "ANY_URI"
+                      - "BASE_64_BINARY"
+                      - "I_PV_4_ADDRESS"
+                      - "I_PV_6_ADDRESS"
+                      - "HOST_NAME"
+                      - "MAC_ADDRESS"
+                      - "DOMAIN_NAME"
+                      - "URI"
+                      - "TIME_ZONE"
+                      - "OCTAL"
+                      - "BINARY"
+                      - "BIN_HEX"
+                      - "SUBNET_MASK"
+                      - "UUID_GUID"
+                      - "COLLECTION"
+                      - "CVE_ID"
+                      - "CWE_ID"
+                      - "CAPEC_ID"
+                      - "CCE_ID"
+                      - "CPE_NAME"
+                    appearsRandom: !<boolean> {}
+                    isObfuscated: !<boolean> {}
+                    obfuscationAlgorithmRef: !<string> {}
+                    isDefanged: !<boolean> {}
+                    defangingAlgorithmRef: !<string> {}
+                    refangingTransformType: !<string> {}
+                    refangingTransform: !<string> {}
+                    observedEncoding: !<string> {}
+                    condition: !<string>
+                      enum:
+                      - "EQUALS"
+                      - "DOES_NOT_EQUAL"
+                      - "CONTAINS"
+                      - "DOES_NOT_CONTAIN"
+                      - "STARTS_WITH"
+                      - "ENDS_WITH"
+                      - "GREATER_THAN"
+                      - "GREATER_THAN_OR_EQUAL"
+                      - "LESS_THAN"
+                      - "LESS_THAN_OR_EQUAL"
+                      - "INCLUSIVE_BETWEEN"
+                      - "EXCLUSIVE_BETWEEN"
+                      - "FITS_PATTERN"
+                      - "BITWISE_AND"
+                      - "BITWISE_OR"
+                      - "BITWISE_XOR"
+                    isCaseSensitive: !<boolean> {}
+                    applyCondition: !<string>
+                      enum:
+                      - "ANY"
+                      - "ALL"
+                      - "NONE"
+                    delimiter: !<string> {}
+                    bitMask: !<array>
+                      items: !<integer> {}
+                    patternType: !<string>
+                      enum:
+                      - "REGEX"
+                      - "BINARY"
+                      - "X_PATH"
+                    regexSyntax: !<string> {}
+                    hasChanged: !<boolean> {}
+                    trend: !<boolean> {}
+                fuzzyHashStructures: !<array>
+                  items: !<object>
+                    id: "urn:jsonschema:org:mitre:cybox:common_2:FuzzyHashStructureType"
+                    properties:
+                      blockSize: !<object>
+                        id: "urn:jsonschema:org:mitre:cybox:common_2:IntegerObjectPropertyType"
+                        properties:
+                          value: !<any> {}
+                          id: !<string> {}
+                          idref: !<string> {}
+                          datatype: !<string>
+                            enum:
+                            - "STRING"
+                            - "INT"
+                            - "FLOAT"
+                            - "DATE"
+                            - "POSITIVE_INTEGER"
+                            - "UNSIGNED_INT"
+                            - "DATE_TIME"
+                            - "TIME"
+                            - "BOOLEAN"
+                            - "NAME"
+                            - "LONG"
+                            - "UNSIGNED_LONG"
+                            - "DURATION"
+                            - "DOUBLE"
+                            - "NON_NEGATIVE_INTEGER"
+                            - "HEX_BINARY"
+                            - "ANY_URI"
+                            - "BASE_64_BINARY"
+                            - "I_PV_4_ADDRESS"
+                            - "I_PV_6_ADDRESS"
+                            - "HOST_NAME"
+                            - "MAC_ADDRESS"
+                            - "DOMAIN_NAME"
+                            - "URI"
+                            - "TIME_ZONE"
+                            - "OCTAL"
+                            - "BINARY"
+                            - "BIN_HEX"
+                            - "SUBNET_MASK"
+                            - "UUID_GUID"
+                            - "COLLECTION"
+                            - "CVE_ID"
+                            - "CWE_ID"
+                            - "CAPEC_ID"
+                            - "CCE_ID"
+                            - "CPE_NAME"
+                          appearsRandom: !<boolean> {}
+                          isObfuscated: !<boolean> {}
+                          obfuscationAlgorithmRef: !<string> {}
+                          isDefanged: !<boolean> {}
+                          defangingAlgorithmRef: !<string> {}
+                          refangingTransformType: !<string> {}
+                          refangingTransform: !<string> {}
+                          observedEncoding: !<string> {}
+                          condition: !<string>
+                            enum:
+                            - "EQUALS"
+                            - "DOES_NOT_EQUAL"
+                            - "CONTAINS"
+                            - "DOES_NOT_CONTAIN"
+                            - "STARTS_WITH"
+                            - "ENDS_WITH"
+                            - "GREATER_THAN"
+                            - "GREATER_THAN_OR_EQUAL"
+                            - "LESS_THAN"
+                            - "LESS_THAN_OR_EQUAL"
+                            - "INCLUSIVE_BETWEEN"
+                            - "EXCLUSIVE_BETWEEN"
+                            - "FITS_PATTERN"
+                            - "BITWISE_AND"
+                            - "BITWISE_OR"
+                            - "BITWISE_XOR"
+                          isCaseSensitive: !<boolean> {}
+                          applyCondition: !<string>
+                            enum:
+                            - "ANY"
+                            - "ALL"
+                            - "NONE"
+                          delimiter: !<string> {}
+                          bitMask: !<array>
+                            items: !<integer> {}
+                          patternType: !<string>
+                            enum:
+                            - "REGEX"
+                            - "BINARY"
+                            - "X_PATH"
+                          regexSyntax: !<string> {}
+                          hasChanged: !<boolean> {}
+                          trend: !<boolean> {}
+                      blockHash: !<object>
+                        id: "urn:jsonschema:org:mitre:cybox:common_2:FuzzyHashBlockType"
+                        properties:
+                          blockHashValue: !<object>
+                            id: "urn:jsonschema:org:mitre:cybox:common_2:HashValueType"
+                            properties:
+                              fuzzyHashValue: !<object>
+                                $ref: "urn:jsonschema:org:mitre:cybox:common_2:FuzzyHashValueType"
+                              simpleHashValue: !<object>
+                                $ref: "urn:jsonschema:org:mitre:cybox:common_2:SimpleHashValueType"
+                          segmentCount: !<object>
+                            $ref: "urn:jsonschema:org:mitre:cybox:common_2:IntegerObjectPropertyType"
+                          segments: !<object>
+                            id: "urn:jsonschema:org:mitre:cybox:common_2:HashSegmentsType"
+                            properties:
+                              segments: !<array>
+                                items: !<object>
+                                  id: "urn:jsonschema:org:mitre:cybox:common_2:HashSegmentType"
+                                  properties:
+                                    triggerPoint: !<object>
+                                      id: "urn:jsonschema:org:mitre:cybox:common_2:HexBinaryObjectPropertyType"
+                                      properties:
+                                        value: !<any> {}
+                                        id: !<string> {}
+                                        idref: !<string> {}
+                                        datatype: !<string>
+                                          enum:
+                                          - "STRING"
+                                          - "INT"
+                                          - "FLOAT"
+                                          - "DATE"
+                                          - "POSITIVE_INTEGER"
+                                          - "UNSIGNED_INT"
+                                          - "DATE_TIME"
+                                          - "TIME"
+                                          - "BOOLEAN"
+                                          - "NAME"
+                                          - "LONG"
+                                          - "UNSIGNED_LONG"
+                                          - "DURATION"
+                                          - "DOUBLE"
+                                          - "NON_NEGATIVE_INTEGER"
+                                          - "HEX_BINARY"
+                                          - "ANY_URI"
+                                          - "BASE_64_BINARY"
+                                          - "I_PV_4_ADDRESS"
+                                          - "I_PV_6_ADDRESS"
+                                          - "HOST_NAME"
+                                          - "MAC_ADDRESS"
+                                          - "DOMAIN_NAME"
+                                          - "URI"
+                                          - "TIME_ZONE"
+                                          - "OCTAL"
+                                          - "BINARY"
+                                          - "BIN_HEX"
+                                          - "SUBNET_MASK"
+                                          - "UUID_GUID"
+                                          - "COLLECTION"
+                                          - "CVE_ID"
+                                          - "CWE_ID"
+                                          - "CAPEC_ID"
+                                          - "CCE_ID"
+                                          - "CPE_NAME"
+                                        appearsRandom: !<boolean> {}
+                                        isObfuscated: !<boolean> {}
+                                        obfuscationAlgorithmRef: !<string> {}
+                                        isDefanged: !<boolean> {}
+                                        defangingAlgorithmRef: !<string> {}
+                                        refangingTransformType: !<string> {}
+                                        refangingTransform: !<string> {}
+                                        observedEncoding: !<string> {}
+                                        condition: !<string>
+                                          enum:
+                                          - "EQUALS"
+                                          - "DOES_NOT_EQUAL"
+                                          - "CONTAINS"
+                                          - "DOES_NOT_CONTAIN"
+                                          - "STARTS_WITH"
+                                          - "ENDS_WITH"
+                                          - "GREATER_THAN"
+                                          - "GREATER_THAN_OR_EQUAL"
+                                          - "LESS_THAN"
+                                          - "LESS_THAN_OR_EQUAL"
+                                          - "INCLUSIVE_BETWEEN"
+                                          - "EXCLUSIVE_BETWEEN"
+                                          - "FITS_PATTERN"
+                                          - "BITWISE_AND"
+                                          - "BITWISE_OR"
+                                          - "BITWISE_XOR"
+                                        isCaseSensitive: !<boolean> {}
+                                        applyCondition: !<string>
+                                          enum:
+                                          - "ANY"
+                                          - "ALL"
+                                          - "NONE"
+                                        delimiter: !<string> {}
+                                        bitMask: !<array>
+                                          items: !<integer> {}
+                                        patternType: !<string>
+                                          enum:
+                                          - "REGEX"
+                                          - "BINARY"
+                                          - "X_PATH"
+                                        regexSyntax: !<string> {}
+                                        hasChanged: !<boolean> {}
+                                        trend: !<boolean> {}
+                                    segmentHash: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:HashValueType"
+                                    rawSegmentContent: !<any> {}
+      toolConfiguration: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:common_2:ToolConfigurationType"
+        properties:
+          configurationSettings: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:common_2:ConfigurationSettingsType"
+            properties:
+              configurationSettings: !<array>
+                items: !<object>
+                  id: "urn:jsonschema:org:mitre:cybox:common_2:ConfigurationSettingType"
+                  properties:
+                    itemName: !<string> {}
+                    itemValue: !<string> {}
+                    itemType: !<string> {}
+                    itemDescription: !<string> {}
+          dependencies: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:common_2:DependenciesType"
+            properties:
+              dependencies: !<array>
+                items: !<object>
+                  id: "urn:jsonschema:org:mitre:cybox:common_2:DependencyType"
+                  properties:
+                    dependencyType: !<string> {}
+                    dependencyDescription: !<object>
+                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+          usageContextAssumptions: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:common_2:UsageContextAssumptionsType"
+            properties:
+              usageContextAssumptions: !<array>
+                items: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+          internationalizationSettings: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:common_2:InternationalizationSettingsType"
+            properties:
+              internalStrings: !<array>
+                items: !<object>
+                  id: "urn:jsonschema:org:mitre:cybox:common_2:InternalStringsType"
+                  properties:
+                    key: !<string> {}
+                    content: !<string> {}
+          buildInformation: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:common_2:BuildInformationType"
+            properties:
+              buildID: !<string> {}
+              buildProject: !<string> {}
+              buildUtility: !<object>
+                id: "urn:jsonschema:org:mitre:cybox:common_2:BuildUtilityType"
+                properties:
+                  buildUtilityName: !<string> {}
+                  buildUtilityPlatformSpecification: !<object>
+                    id: "urn:jsonschema:org:mitre:cybox:common_2:PlatformSpecificationType"
+                    properties:
+                      description: !<object>
+                        $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                      identifiers: !<array>
+                        items: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:PlatformIdentifierType"
+                          properties:
+                            value: !<any> {}
+                            id: !<string> {}
+                            idref: !<string> {}
+                            datatype: !<string>
+                              enum:
+                              - "STRING"
+                              - "INT"
+                              - "FLOAT"
+                              - "DATE"
+                              - "POSITIVE_INTEGER"
+                              - "UNSIGNED_INT"
+                              - "DATE_TIME"
+                              - "TIME"
+                              - "BOOLEAN"
+                              - "NAME"
+                              - "LONG"
+                              - "UNSIGNED_LONG"
+                              - "DURATION"
+                              - "DOUBLE"
+                              - "NON_NEGATIVE_INTEGER"
+                              - "HEX_BINARY"
+                              - "ANY_URI"
+                              - "BASE_64_BINARY"
+                              - "I_PV_4_ADDRESS"
+                              - "I_PV_6_ADDRESS"
+                              - "HOST_NAME"
+                              - "MAC_ADDRESS"
+                              - "DOMAIN_NAME"
+                              - "URI"
+                              - "TIME_ZONE"
+                              - "OCTAL"
+                              - "BINARY"
+                              - "BIN_HEX"
+                              - "SUBNET_MASK"
+                              - "UUID_GUID"
+                              - "COLLECTION"
+                              - "CVE_ID"
+                              - "CWE_ID"
+                              - "CAPEC_ID"
+                              - "CCE_ID"
+                              - "CPE_NAME"
+                            appearsRandom: !<boolean> {}
+                            isObfuscated: !<boolean> {}
+                            obfuscationAlgorithmRef: !<string> {}
+                            isDefanged: !<boolean> {}
+                            defangingAlgorithmRef: !<string> {}
+                            refangingTransformType: !<string> {}
+                            refangingTransform: !<string> {}
+                            observedEncoding: !<string> {}
+                            condition: !<string>
+                              enum:
+                              - "EQUALS"
+                              - "DOES_NOT_EQUAL"
+                              - "CONTAINS"
+                              - "DOES_NOT_CONTAIN"
+                              - "STARTS_WITH"
+                              - "ENDS_WITH"
+                              - "GREATER_THAN"
+                              - "GREATER_THAN_OR_EQUAL"
+                              - "LESS_THAN"
+                              - "LESS_THAN_OR_EQUAL"
+                              - "INCLUSIVE_BETWEEN"
+                              - "EXCLUSIVE_BETWEEN"
+                              - "FITS_PATTERN"
+                              - "BITWISE_AND"
+                              - "BITWISE_OR"
+                              - "BITWISE_XOR"
+                            isCaseSensitive: !<boolean> {}
+                            applyCondition: !<string>
+                              enum:
+                              - "ANY"
+                              - "ALL"
+                              - "NONE"
+                            delimiter: !<string> {}
+                            bitMask: !<array>
+                              items: !<integer> {}
+                            patternType: !<string>
+                              enum:
+                              - "REGEX"
+                              - "BINARY"
+                              - "X_PATH"
+                            regexSyntax: !<string> {}
+                            hasChanged: !<boolean> {}
+                            trend: !<boolean> {}
+                            system: !<string> {}
+                            systemRef: !<string> {}
+              buildVersion: !<string> {}
+              buildLabel: !<string> {}
+              compilers: !<object>
+                id: "urn:jsonschema:org:mitre:cybox:common_2:CompilersType"
+                properties:
+                  compilers: !<array>
+                    items: !<object>
+                      id: "urn:jsonschema:org:mitre:cybox:common_2:CompilerType"
+                      properties:
+                        compilerInformalDescription: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:CompilerInformalDescriptionType"
+                          properties:
+                            compilerName: !<string> {}
+                            compilerVersion: !<string> {}
+                        compilerPlatformSpecification: !<object>
+                          $ref: "urn:jsonschema:org:mitre:cybox:common_2:PlatformSpecificationType"
+              compilationDate: !<object>
+                id: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeWithPrecisionType"
+                properties:
+                  value: !<integer>
+                    format: "utc-millisec"
+                  precision: !<string> {}
+              buildConfiguration: !<object>
+                id: "urn:jsonschema:org:mitre:cybox:common_2:BuildConfigurationType"
+                properties:
+                  configurationSettingDescription: !<string> {}
+                  configurationSettings: !<object>
+                    $ref: "urn:jsonschema:org:mitre:cybox:common_2:ConfigurationSettingsType"
+              buildScript: !<string> {}
+              libraries: !<object>
+                id: "urn:jsonschema:org:mitre:cybox:common_2:LibrariesType"
+                properties:
+                  library: !<object>
+                    id: "urn:jsonschema:org:mitre:cybox:common_2:LibraryType"
+                    properties:
+                      name: !<string> {}
+                      version: !<string> {}
+              buildOutputLog: !<string> {}
+      executionEnvironment: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:common_2:ExecutionEnvironmentType"
+        properties:
+          system: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:common_2:ObjectPropertiesType"
+            properties:
+              customProperties: !<object>
+                $ref: "urn:jsonschema:org:mitre:cybox:common_2:CustomPropertiesType"
+              objectReference: !<string> {}
+          userAccountInfo: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:ObjectPropertiesType"
+          commandLine: !<string> {}
+          startTime: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeWithPrecisionType"
+      errors: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:common_2:ErrorsType"
+        properties:
+          errors: !<array>
+            items: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:common_2:ErrorType"
+              properties:
+                errorType: !<string> {}
+                errorCount: !<integer> {}
+                errorInstances: !<object>
+                  id: "urn:jsonschema:org:mitre:cybox:common_2:ErrorInstancesType"
+                  properties:
+                    errorInstances: !<array>
+                      items: !<string> {}
+      metadatas: !<array>
+        items: !<object>
+          id: "urn:jsonschema:org:mitre:cybox:common_2:MetadataType"
+          properties:
+            value: !<string> {}
+            subData: !<array>
+              items: !<object>
+                $ref: "urn:jsonschema:org:mitre:cybox:common_2:MetadataType"
+            type: !<string> {}
+      compensationModel: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:common_2:CompensationModelType"
+        properties:
+          value: !<any> {}
+          id: !<string> {}
+          idref: !<string> {}
+          datatype: !<string>
+            enum:
+            - "STRING"
+            - "INT"
+            - "FLOAT"
+            - "DATE"
+            - "POSITIVE_INTEGER"
+            - "UNSIGNED_INT"
+            - "DATE_TIME"
+            - "TIME"
+            - "BOOLEAN"
+            - "NAME"
+            - "LONG"
+            - "UNSIGNED_LONG"
+            - "DURATION"
+            - "DOUBLE"
+            - "NON_NEGATIVE_INTEGER"
+            - "HEX_BINARY"
+            - "ANY_URI"
+            - "BASE_64_BINARY"
+            - "I_PV_4_ADDRESS"
+            - "I_PV_6_ADDRESS"
+            - "HOST_NAME"
+            - "MAC_ADDRESS"
+            - "DOMAIN_NAME"
+            - "URI"
+            - "TIME_ZONE"
+            - "OCTAL"
+            - "BINARY"
+            - "BIN_HEX"
+            - "SUBNET_MASK"
+            - "UUID_GUID"
+            - "COLLECTION"
+            - "CVE_ID"
+            - "CWE_ID"
+            - "CAPEC_ID"
+            - "CCE_ID"
+            - "CPE_NAME"
+          appearsRandom: !<boolean> {}
+          isObfuscated: !<boolean> {}
+          obfuscationAlgorithmRef: !<string> {}
+          isDefanged: !<boolean> {}
+          defangingAlgorithmRef: !<string> {}
+          refangingTransformType: !<string> {}
+          refangingTransform: !<string> {}
+          observedEncoding: !<string> {}
+          condition: !<string>
+            enum:
+            - "EQUALS"
+            - "DOES_NOT_EQUAL"
+            - "CONTAINS"
+            - "DOES_NOT_CONTAIN"
+            - "STARTS_WITH"
+            - "ENDS_WITH"
+            - "GREATER_THAN"
+            - "GREATER_THAN_OR_EQUAL"
+            - "LESS_THAN"
+            - "LESS_THAN_OR_EQUAL"
+            - "INCLUSIVE_BETWEEN"
+            - "EXCLUSIVE_BETWEEN"
+            - "FITS_PATTERN"
+            - "BITWISE_AND"
+            - "BITWISE_OR"
+            - "BITWISE_XOR"
+          isCaseSensitive: !<boolean> {}
+          applyCondition: !<string>
+            enum:
+            - "ANY"
+            - "ALL"
+            - "NONE"
+          delimiter: !<string> {}
+          bitMask: !<array>
+            items: !<integer> {}
+          patternType: !<string>
+            enum:
+            - "REGEX"
+            - "BINARY"
+            - "X_PATH"
+          regexSyntax: !<string> {}
+          hasChanged: !<boolean> {}
+          trend: !<boolean> {}
+      id: !<string> {}
+      idref: !<string> {}
+  urlhistoryEntries: !<array>
+    items: !<object>
+      id: "urn:jsonschema:org:mitre:cybox:objects:URLHistoryEntryType"
+      properties:
+        url: !<object>
+          id: "urn:jsonschema:org:mitre:cybox:objects:URIObjectType"
+          properties:
+            customProperties: !<object>
+              $ref: "urn:jsonschema:org:mitre:cybox:common_2:CustomPropertiesType"
+            objectReference: !<string> {}
+            value: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:common_2:AnyURIObjectPropertyType"
+              properties:
+                value: !<any> {}
+                id: !<string> {}
+                idref: !<string> {}
+                datatype: !<string>
+                  enum:
+                  - "STRING"
+                  - "INT"
+                  - "FLOAT"
+                  - "DATE"
+                  - "POSITIVE_INTEGER"
+                  - "UNSIGNED_INT"
+                  - "DATE_TIME"
+                  - "TIME"
+                  - "BOOLEAN"
+                  - "NAME"
+                  - "LONG"
+                  - "UNSIGNED_LONG"
+                  - "DURATION"
+                  - "DOUBLE"
+                  - "NON_NEGATIVE_INTEGER"
+                  - "HEX_BINARY"
+                  - "ANY_URI"
+                  - "BASE_64_BINARY"
+                  - "I_PV_4_ADDRESS"
+                  - "I_PV_6_ADDRESS"
+                  - "HOST_NAME"
+                  - "MAC_ADDRESS"
+                  - "DOMAIN_NAME"
+                  - "URI"
+                  - "TIME_ZONE"
+                  - "OCTAL"
+                  - "BINARY"
+                  - "BIN_HEX"
+                  - "SUBNET_MASK"
+                  - "UUID_GUID"
+                  - "COLLECTION"
+                  - "CVE_ID"
+                  - "CWE_ID"
+                  - "CAPEC_ID"
+                  - "CCE_ID"
+                  - "CPE_NAME"
+                appearsRandom: !<boolean> {}
+                isObfuscated: !<boolean> {}
+                obfuscationAlgorithmRef: !<string> {}
+                isDefanged: !<boolean> {}
+                defangingAlgorithmRef: !<string> {}
+                refangingTransformType: !<string> {}
+                refangingTransform: !<string> {}
+                observedEncoding: !<string> {}
+                condition: !<string>
+                  enum:
+                  - "EQUALS"
+                  - "DOES_NOT_EQUAL"
+                  - "CONTAINS"
+                  - "DOES_NOT_CONTAIN"
+                  - "STARTS_WITH"
+                  - "ENDS_WITH"
+                  - "GREATER_THAN"
+                  - "GREATER_THAN_OR_EQUAL"
+                  - "LESS_THAN"
+                  - "LESS_THAN_OR_EQUAL"
+                  - "INCLUSIVE_BETWEEN"
+                  - "EXCLUSIVE_BETWEEN"
+                  - "FITS_PATTERN"
+                  - "BITWISE_AND"
+                  - "BITWISE_OR"
+                  - "BITWISE_XOR"
+                isCaseSensitive: !<boolean> {}
+                applyCondition: !<string>
+                  enum:
+                  - "ANY"
+                  - "ALL"
+                  - "NONE"
+                delimiter: !<string> {}
+                bitMask: !<array>
+                  items: !<integer> {}
+                patternType: !<string>
+                  enum:
+                  - "REGEX"
+                  - "BINARY"
+                  - "X_PATH"
+                regexSyntax: !<string> {}
+                hasChanged: !<boolean> {}
+                trend: !<boolean> {}
+            type: !<string>
+              enum:
+              - "URL"
+              - "GENERAL_URN"
+              - "DOMAIN_NAME"
+        hostname: !<object>
+          id: "urn:jsonschema:org:mitre:cybox:objects:Hostname"
+          properties:
+            customProperties: !<object>
+              $ref: "urn:jsonschema:org:mitre:cybox:common_2:CustomPropertiesType"
+            objectReference: !<string> {}
+            hostnameValue: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
+              properties:
+                value: !<any> {}
+                id: !<string> {}
+                idref: !<string> {}
+                datatype: !<string>
+                  enum:
+                  - "STRING"
+                  - "INT"
+                  - "FLOAT"
+                  - "DATE"
+                  - "POSITIVE_INTEGER"
+                  - "UNSIGNED_INT"
+                  - "DATE_TIME"
+                  - "TIME"
+                  - "BOOLEAN"
+                  - "NAME"
+                  - "LONG"
+                  - "UNSIGNED_LONG"
+                  - "DURATION"
+                  - "DOUBLE"
+                  - "NON_NEGATIVE_INTEGER"
+                  - "HEX_BINARY"
+                  - "ANY_URI"
+                  - "BASE_64_BINARY"
+                  - "I_PV_4_ADDRESS"
+                  - "I_PV_6_ADDRESS"
+                  - "HOST_NAME"
+                  - "MAC_ADDRESS"
+                  - "DOMAIN_NAME"
+                  - "URI"
+                  - "TIME_ZONE"
+                  - "OCTAL"
+                  - "BINARY"
+                  - "BIN_HEX"
+                  - "SUBNET_MASK"
+                  - "UUID_GUID"
+                  - "COLLECTION"
+                  - "CVE_ID"
+                  - "CWE_ID"
+                  - "CAPEC_ID"
+                  - "CCE_ID"
+                  - "CPE_NAME"
+                appearsRandom: !<boolean> {}
+                isObfuscated: !<boolean> {}
+                obfuscationAlgorithmRef: !<string> {}
+                isDefanged: !<boolean> {}
+                defangingAlgorithmRef: !<string> {}
+                refangingTransformType: !<string> {}
+                refangingTransform: !<string> {}
+                observedEncoding: !<string> {}
+                condition: !<string>
+                  enum:
+                  - "EQUALS"
+                  - "DOES_NOT_EQUAL"
+                  - "CONTAINS"
+                  - "DOES_NOT_CONTAIN"
+                  - "STARTS_WITH"
+                  - "ENDS_WITH"
+                  - "GREATER_THAN"
+                  - "GREATER_THAN_OR_EQUAL"
+                  - "LESS_THAN"
+                  - "LESS_THAN_OR_EQUAL"
+                  - "INCLUSIVE_BETWEEN"
+                  - "EXCLUSIVE_BETWEEN"
+                  - "FITS_PATTERN"
+                  - "BITWISE_AND"
+                  - "BITWISE_OR"
+                  - "BITWISE_XOR"
+                isCaseSensitive: !<boolean> {}
+                applyCondition: !<string>
+                  enum:
+                  - "ANY"
+                  - "ALL"
+                  - "NONE"
+                delimiter: !<string> {}
+                bitMask: !<array>
+                  items: !<integer> {}
+                patternType: !<string>
+                  enum:
+                  - "REGEX"
+                  - "BINARY"
+                  - "X_PATH"
+                regexSyntax: !<string> {}
+                hasChanged: !<boolean> {}
+                trend: !<boolean> {}
+            namingSystems: !<array>
+              items: !<object>
+                $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
+            isDomainName: !<boolean> {}
+        referrerURL: !<object>
+          $ref: "urn:jsonschema:org:mitre:cybox:objects:URIObjectType"
+        pageTitle: !<object>
+          $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
+        userProfileName: !<object>
+          $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
+        visitCount: !<object>
+          id: "urn:jsonschema:org:mitre:cybox:common_2:NonNegativeIntegerObjectPropertyType"
+          properties:
+            value: !<any> {}
+            id: !<string> {}
+            idref: !<string> {}
+            datatype: !<string>
+              enum:
+              - "STRING"
+              - "INT"
+              - "FLOAT"
+              - "DATE"
+              - "POSITIVE_INTEGER"
+              - "UNSIGNED_INT"
+              - "DATE_TIME"
+              - "TIME"
+              - "BOOLEAN"
+              - "NAME"
+              - "LONG"
+              - "UNSIGNED_LONG"
+              - "DURATION"
+              - "DOUBLE"
+              - "NON_NEGATIVE_INTEGER"
+              - "HEX_BINARY"
+              - "ANY_URI"
+              - "BASE_64_BINARY"
+              - "I_PV_4_ADDRESS"
+              - "I_PV_6_ADDRESS"
+              - "HOST_NAME"
+              - "MAC_ADDRESS"
+              - "DOMAIN_NAME"
+              - "URI"
+              - "TIME_ZONE"
+              - "OCTAL"
+              - "BINARY"
+              - "BIN_HEX"
+              - "SUBNET_MASK"
+              - "UUID_GUID"
+              - "COLLECTION"
+              - "CVE_ID"
+              - "CWE_ID"
+              - "CAPEC_ID"
+              - "CCE_ID"
+              - "CPE_NAME"
+            appearsRandom: !<boolean> {}
+            isObfuscated: !<boolean> {}
+            obfuscationAlgorithmRef: !<string> {}
+            isDefanged: !<boolean> {}
+            defangingAlgorithmRef: !<string> {}
+            refangingTransformType: !<string> {}
+            refangingTransform: !<string> {}
+            observedEncoding: !<string> {}
+            condition: !<string>
+              enum:
+              - "EQUALS"
+              - "DOES_NOT_EQUAL"
+              - "CONTAINS"
+              - "DOES_NOT_CONTAIN"
+              - "STARTS_WITH"
+              - "ENDS_WITH"
+              - "GREATER_THAN"
+              - "GREATER_THAN_OR_EQUAL"
+              - "LESS_THAN"
+              - "LESS_THAN_OR_EQUAL"
+              - "INCLUSIVE_BETWEEN"
+              - "EXCLUSIVE_BETWEEN"
+              - "FITS_PATTERN"
+              - "BITWISE_AND"
+              - "BITWISE_OR"
+              - "BITWISE_XOR"
+            isCaseSensitive: !<boolean> {}
+            applyCondition: !<string>
+              enum:
+              - "ANY"
+              - "ALL"
+              - "NONE"
+            delimiter: !<string> {}
+            bitMask: !<array>
+              items: !<integer> {}
+            patternType: !<string>
+              enum:
+              - "REGEX"
+              - "BINARY"
+              - "X_PATH"
+            regexSyntax: !<string> {}
+            hasChanged: !<boolean> {}
+            trend: !<boolean> {}
+        manuallyEnteredCount: !<object>
+          $ref: "urn:jsonschema:org:mitre:cybox:common_2:NonNegativeIntegerObjectPropertyType"
+        modificationDateTime: !<object>
+          id: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeObjectPropertyType"
+          properties:
+            value: !<any> {}
+            id: !<string> {}
+            idref: !<string> {}
+            datatype: !<string>
+              enum:
+              - "STRING"
+              - "INT"
+              - "FLOAT"
+              - "DATE"
+              - "POSITIVE_INTEGER"
+              - "UNSIGNED_INT"
+              - "DATE_TIME"
+              - "TIME"
+              - "BOOLEAN"
+              - "NAME"
+              - "LONG"
+              - "UNSIGNED_LONG"
+              - "DURATION"
+              - "DOUBLE"
+              - "NON_NEGATIVE_INTEGER"
+              - "HEX_BINARY"
+              - "ANY_URI"
+              - "BASE_64_BINARY"
+              - "I_PV_4_ADDRESS"
+              - "I_PV_6_ADDRESS"
+              - "HOST_NAME"
+              - "MAC_ADDRESS"
+              - "DOMAIN_NAME"
+              - "URI"
+              - "TIME_ZONE"
+              - "OCTAL"
+              - "BINARY"
+              - "BIN_HEX"
+              - "SUBNET_MASK"
+              - "UUID_GUID"
+              - "COLLECTION"
+              - "CVE_ID"
+              - "CWE_ID"
+              - "CAPEC_ID"
+              - "CCE_ID"
+              - "CPE_NAME"
+            appearsRandom: !<boolean> {}
+            isObfuscated: !<boolean> {}
+            obfuscationAlgorithmRef: !<string> {}
+            isDefanged: !<boolean> {}
+            defangingAlgorithmRef: !<string> {}
+            refangingTransformType: !<string> {}
+            refangingTransform: !<string> {}
+            observedEncoding: !<string> {}
+            condition: !<string>
+              enum:
+              - "EQUALS"
+              - "DOES_NOT_EQUAL"
+              - "CONTAINS"
+              - "DOES_NOT_CONTAIN"
+              - "STARTS_WITH"
+              - "ENDS_WITH"
+              - "GREATER_THAN"
+              - "GREATER_THAN_OR_EQUAL"
+              - "LESS_THAN"
+              - "LESS_THAN_OR_EQUAL"
+              - "INCLUSIVE_BETWEEN"
+              - "EXCLUSIVE_BETWEEN"
+              - "FITS_PATTERN"
+              - "BITWISE_AND"
+              - "BITWISE_OR"
+              - "BITWISE_XOR"
+            isCaseSensitive: !<boolean> {}
+            applyCondition: !<string>
+              enum:
+              - "ANY"
+              - "ALL"
+              - "NONE"
+            delimiter: !<string> {}
+            bitMask: !<array>
+              items: !<integer> {}
+            patternType: !<string>
+              enum:
+              - "REGEX"
+              - "BINARY"
+              - "X_PATH"
+            regexSyntax: !<string> {}
+            hasChanged: !<boolean> {}
+            trend: !<boolean> {}
+            precision: !<string> {}
+        expirationDateTime: !<object>
+          $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeObjectPropertyType"
+        firstVisitDateTime: !<object>
+          $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeObjectPropertyType"
+        lastVisitDateTime: !<object>
+          $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeObjectPropertyType"

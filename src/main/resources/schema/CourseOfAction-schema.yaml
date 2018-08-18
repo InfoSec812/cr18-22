@@ -1,0 +1,1406 @@
+--- !<object>
+id: "urn:jsonschema:org:mitre:stix:courseofaction_1:CourseOfAction"
+properties:
+  id: !<string> {}
+  idref: !<string> {}
+  timestamp: !<integer>
+    format: "utc-millisec"
+  title: !<string> {}
+  stage: !<object>
+    id: "urn:jsonschema:org:mitre:stix:common_1:ControlledVocabularyStringType"
+    properties:
+      value: !<any> {}
+      vocabName: !<string> {}
+      vocabReference: !<string> {}
+  type: !<object>
+    $ref: "urn:jsonschema:org:mitre:stix:common_1:ControlledVocabularyStringType"
+  descriptions: !<array>
+    items: !<object>
+      id: "urn:jsonschema:org:mitre:stix:common_1:StructuredTextType"
+      properties:
+        value: !<string> {}
+        id: !<string> {}
+        ordinality: !<integer> {}
+        structuringFormat: !<string> {}
+  shortDescriptions: !<array>
+    items: !<object>
+      $ref: "urn:jsonschema:org:mitre:stix:common_1:StructuredTextType"
+  objective: !<object>
+    id: "urn:jsonschema:org:mitre:stix:courseofaction_1:ObjectiveType"
+    properties:
+      descriptions: !<array>
+        items: !<object>
+          $ref: "urn:jsonschema:org:mitre:stix:common_1:StructuredTextType"
+      shortDescriptions: !<array>
+        items: !<object>
+          $ref: "urn:jsonschema:org:mitre:stix:common_1:StructuredTextType"
+      applicabilityConfidence: !<object>
+        id: "urn:jsonschema:org:mitre:stix:common_1:ConfidenceType"
+        properties:
+          value: !<object>
+            $ref: "urn:jsonschema:org:mitre:stix:common_1:ControlledVocabularyStringType"
+          descriptions: !<array>
+            items: !<object>
+              $ref: "urn:jsonschema:org:mitre:stix:common_1:StructuredTextType"
+          source: !<object>
+            id: "urn:jsonschema:org:mitre:stix:common_1:InformationSourceType"
+            properties:
+              descriptions: !<array>
+                items: !<object>
+                  $ref: "urn:jsonschema:org:mitre:stix:common_1:StructuredTextType"
+              identity: !<object>
+                id: "urn:jsonschema:org:mitre:stix:common_1:IdentityType"
+                properties:
+                  name: !<string> {}
+                  relatedIdentities: !<object>
+                    id: "urn:jsonschema:org:mitre:stix:common_1:RelatedIdentitiesType"
+                    properties:
+                      relatedIdentities: !<array>
+                        items: !<object>
+                          id: "urn:jsonschema:org:mitre:stix:common_1:RelatedIdentityType"
+                          properties:
+                            confidence: !<object>
+                              $ref: "urn:jsonschema:org:mitre:stix:common_1:ConfidenceType"
+                            informationSource: !<object>
+                              $ref: "urn:jsonschema:org:mitre:stix:common_1:InformationSourceType"
+                            relationship: !<object>
+                              $ref: "urn:jsonschema:org:mitre:stix:common_1:ControlledVocabularyStringType"
+                            identity: !<object>
+                              $ref: "urn:jsonschema:org:mitre:stix:common_1:IdentityType"
+                  id: !<string> {}
+                  idref: !<string> {}
+              roles: !<array>
+                items: !<object>
+                  $ref: "urn:jsonschema:org:mitre:stix:common_1:ControlledVocabularyStringType"
+              contributingSources: !<object>
+                id: "urn:jsonschema:org:mitre:stix:common_1:ContributingSourcesType"
+                properties:
+                  sources: !<array>
+                    items: !<object>
+                      $ref: "urn:jsonschema:org:mitre:stix:common_1:InformationSourceType"
+              time: !<object>
+                id: "urn:jsonschema:org:mitre:cybox:common_2:TimeType"
+                properties:
+                  startTime: !<object>
+                    id: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeWithPrecisionType"
+                    properties:
+                      value: !<integer>
+                        format: "utc-millisec"
+                      precision: !<string> {}
+                  endTime: !<object>
+                    $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeWithPrecisionType"
+                  producedTime: !<object>
+                    $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeWithPrecisionType"
+                  receivedTime: !<object>
+                    $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeWithPrecisionType"
+              tools: !<object>
+                id: "urn:jsonschema:org:mitre:cybox:common_2:ToolsInformationType"
+                properties:
+                  tools: !<array>
+                    items: !<object>
+                      id: "urn:jsonschema:org:mitre:cybox:common_2:ToolInformationType"
+                      properties:
+                        name: !<string> {}
+                        types: !<array>
+                          items: !<object>
+                            id: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                            properties:
+                              value: !<any> {}
+                              condition: !<string>
+                                enum:
+                                - "EQUALS"
+                                - "DOES_NOT_EQUAL"
+                                - "CONTAINS"
+                                - "DOES_NOT_CONTAIN"
+                                - "STARTS_WITH"
+                                - "ENDS_WITH"
+                                - "GREATER_THAN"
+                                - "GREATER_THAN_OR_EQUAL"
+                                - "LESS_THAN"
+                                - "LESS_THAN_OR_EQUAL"
+                                - "INCLUSIVE_BETWEEN"
+                                - "EXCLUSIVE_BETWEEN"
+                                - "FITS_PATTERN"
+                                - "BITWISE_AND"
+                                - "BITWISE_OR"
+                                - "BITWISE_XOR"
+                              isCaseSensitive: !<boolean> {}
+                              applyCondition: !<string>
+                                enum:
+                                - "ANY"
+                                - "ALL"
+                                - "NONE"
+                              delimiter: !<string> {}
+                              bitMask: !<array>
+                                items: !<integer> {}
+                              patternType: !<string>
+                                enum:
+                                - "REGEX"
+                                - "BINARY"
+                                - "X_PATH"
+                              regexSyntax: !<string> {}
+                              hasChanged: !<boolean> {}
+                              trend: !<boolean> {}
+                              vocabName: !<string> {}
+                              vocabReference: !<string> {}
+                        description: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                          properties:
+                            value: !<string> {}
+                            structuringFormat: !<string> {}
+                        references: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:ToolReferencesType"
+                          properties:
+                            references: !<array>
+                              items: !<object>
+                                id: "urn:jsonschema:org:mitre:cybox:common_2:ToolReferenceType"
+                                properties:
+                                  value: !<string> {}
+                                  referenceType: !<string>
+                                    enum:
+                                    - "DOCUMENTATION"
+                                    - "SOURCE"
+                                    - "DOWNLOAD"
+                                    - "EXECUTE"
+                                    - "OTHER"
+                        vendor: !<string> {}
+                        version: !<string> {}
+                        servicePack: !<string> {}
+                        toolSpecificData: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:ToolSpecificDataType"
+                        toolHashes: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:HashListType"
+                          properties:
+                            hashes: !<array>
+                              items: !<object>
+                                id: "urn:jsonschema:org:mitre:cybox:common_2:HashType"
+                                properties:
+                                  type: !<object>
+                                    $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                                  fuzzyHashValue: !<object>
+                                    id: "urn:jsonschema:org:mitre:cybox:common_2:FuzzyHashValueType"
+                                    properties:
+                                      value: !<any> {}
+                                      id: !<string> {}
+                                      idref: !<string> {}
+                                      datatype: !<string>
+                                        enum:
+                                        - "STRING"
+                                        - "INT"
+                                        - "FLOAT"
+                                        - "DATE"
+                                        - "POSITIVE_INTEGER"
+                                        - "UNSIGNED_INT"
+                                        - "DATE_TIME"
+                                        - "TIME"
+                                        - "BOOLEAN"
+                                        - "NAME"
+                                        - "LONG"
+                                        - "UNSIGNED_LONG"
+                                        - "DURATION"
+                                        - "DOUBLE"
+                                        - "NON_NEGATIVE_INTEGER"
+                                        - "HEX_BINARY"
+                                        - "ANY_URI"
+                                        - "BASE_64_BINARY"
+                                        - "I_PV_4_ADDRESS"
+                                        - "I_PV_6_ADDRESS"
+                                        - "HOST_NAME"
+                                        - "MAC_ADDRESS"
+                                        - "DOMAIN_NAME"
+                                        - "URI"
+                                        - "TIME_ZONE"
+                                        - "OCTAL"
+                                        - "BINARY"
+                                        - "BIN_HEX"
+                                        - "SUBNET_MASK"
+                                        - "UUID_GUID"
+                                        - "COLLECTION"
+                                        - "CVE_ID"
+                                        - "CWE_ID"
+                                        - "CAPEC_ID"
+                                        - "CCE_ID"
+                                        - "CPE_NAME"
+                                      appearsRandom: !<boolean> {}
+                                      isObfuscated: !<boolean> {}
+                                      obfuscationAlgorithmRef: !<string> {}
+                                      isDefanged: !<boolean> {}
+                                      defangingAlgorithmRef: !<string> {}
+                                      refangingTransformType: !<string> {}
+                                      refangingTransform: !<string> {}
+                                      observedEncoding: !<string> {}
+                                      condition: !<string>
+                                        enum:
+                                        - "EQUALS"
+                                        - "DOES_NOT_EQUAL"
+                                        - "CONTAINS"
+                                        - "DOES_NOT_CONTAIN"
+                                        - "STARTS_WITH"
+                                        - "ENDS_WITH"
+                                        - "GREATER_THAN"
+                                        - "GREATER_THAN_OR_EQUAL"
+                                        - "LESS_THAN"
+                                        - "LESS_THAN_OR_EQUAL"
+                                        - "INCLUSIVE_BETWEEN"
+                                        - "EXCLUSIVE_BETWEEN"
+                                        - "FITS_PATTERN"
+                                        - "BITWISE_AND"
+                                        - "BITWISE_OR"
+                                        - "BITWISE_XOR"
+                                      isCaseSensitive: !<boolean> {}
+                                      applyCondition: !<string>
+                                        enum:
+                                        - "ANY"
+                                        - "ALL"
+                                        - "NONE"
+                                      delimiter: !<string> {}
+                                      bitMask: !<array>
+                                        items: !<integer> {}
+                                      patternType: !<string>
+                                        enum:
+                                        - "REGEX"
+                                        - "BINARY"
+                                        - "X_PATH"
+                                      regexSyntax: !<string> {}
+                                      hasChanged: !<boolean> {}
+                                      trend: !<boolean> {}
+                                  simpleHashValue: !<object>
+                                    id: "urn:jsonschema:org:mitre:cybox:common_2:SimpleHashValueType"
+                                    properties:
+                                      value: !<any> {}
+                                      id: !<string> {}
+                                      idref: !<string> {}
+                                      datatype: !<string>
+                                        enum:
+                                        - "STRING"
+                                        - "INT"
+                                        - "FLOAT"
+                                        - "DATE"
+                                        - "POSITIVE_INTEGER"
+                                        - "UNSIGNED_INT"
+                                        - "DATE_TIME"
+                                        - "TIME"
+                                        - "BOOLEAN"
+                                        - "NAME"
+                                        - "LONG"
+                                        - "UNSIGNED_LONG"
+                                        - "DURATION"
+                                        - "DOUBLE"
+                                        - "NON_NEGATIVE_INTEGER"
+                                        - "HEX_BINARY"
+                                        - "ANY_URI"
+                                        - "BASE_64_BINARY"
+                                        - "I_PV_4_ADDRESS"
+                                        - "I_PV_6_ADDRESS"
+                                        - "HOST_NAME"
+                                        - "MAC_ADDRESS"
+                                        - "DOMAIN_NAME"
+                                        - "URI"
+                                        - "TIME_ZONE"
+                                        - "OCTAL"
+                                        - "BINARY"
+                                        - "BIN_HEX"
+                                        - "SUBNET_MASK"
+                                        - "UUID_GUID"
+                                        - "COLLECTION"
+                                        - "CVE_ID"
+                                        - "CWE_ID"
+                                        - "CAPEC_ID"
+                                        - "CCE_ID"
+                                        - "CPE_NAME"
+                                      appearsRandom: !<boolean> {}
+                                      isObfuscated: !<boolean> {}
+                                      obfuscationAlgorithmRef: !<string> {}
+                                      isDefanged: !<boolean> {}
+                                      defangingAlgorithmRef: !<string> {}
+                                      refangingTransformType: !<string> {}
+                                      refangingTransform: !<string> {}
+                                      observedEncoding: !<string> {}
+                                      condition: !<string>
+                                        enum:
+                                        - "EQUALS"
+                                        - "DOES_NOT_EQUAL"
+                                        - "CONTAINS"
+                                        - "DOES_NOT_CONTAIN"
+                                        - "STARTS_WITH"
+                                        - "ENDS_WITH"
+                                        - "GREATER_THAN"
+                                        - "GREATER_THAN_OR_EQUAL"
+                                        - "LESS_THAN"
+                                        - "LESS_THAN_OR_EQUAL"
+                                        - "INCLUSIVE_BETWEEN"
+                                        - "EXCLUSIVE_BETWEEN"
+                                        - "FITS_PATTERN"
+                                        - "BITWISE_AND"
+                                        - "BITWISE_OR"
+                                        - "BITWISE_XOR"
+                                      isCaseSensitive: !<boolean> {}
+                                      applyCondition: !<string>
+                                        enum:
+                                        - "ANY"
+                                        - "ALL"
+                                        - "NONE"
+                                      delimiter: !<string> {}
+                                      bitMask: !<array>
+                                        items: !<integer> {}
+                                      patternType: !<string>
+                                        enum:
+                                        - "REGEX"
+                                        - "BINARY"
+                                        - "X_PATH"
+                                      regexSyntax: !<string> {}
+                                      hasChanged: !<boolean> {}
+                                      trend: !<boolean> {}
+                                  fuzzyHashStructures: !<array>
+                                    items: !<object>
+                                      id: "urn:jsonschema:org:mitre:cybox:common_2:FuzzyHashStructureType"
+                                      properties:
+                                        blockSize: !<object>
+                                          id: "urn:jsonschema:org:mitre:cybox:common_2:IntegerObjectPropertyType"
+                                          properties:
+                                            value: !<any> {}
+                                            id: !<string> {}
+                                            idref: !<string> {}
+                                            datatype: !<string>
+                                              enum:
+                                              - "STRING"
+                                              - "INT"
+                                              - "FLOAT"
+                                              - "DATE"
+                                              - "POSITIVE_INTEGER"
+                                              - "UNSIGNED_INT"
+                                              - "DATE_TIME"
+                                              - "TIME"
+                                              - "BOOLEAN"
+                                              - "NAME"
+                                              - "LONG"
+                                              - "UNSIGNED_LONG"
+                                              - "DURATION"
+                                              - "DOUBLE"
+                                              - "NON_NEGATIVE_INTEGER"
+                                              - "HEX_BINARY"
+                                              - "ANY_URI"
+                                              - "BASE_64_BINARY"
+                                              - "I_PV_4_ADDRESS"
+                                              - "I_PV_6_ADDRESS"
+                                              - "HOST_NAME"
+                                              - "MAC_ADDRESS"
+                                              - "DOMAIN_NAME"
+                                              - "URI"
+                                              - "TIME_ZONE"
+                                              - "OCTAL"
+                                              - "BINARY"
+                                              - "BIN_HEX"
+                                              - "SUBNET_MASK"
+                                              - "UUID_GUID"
+                                              - "COLLECTION"
+                                              - "CVE_ID"
+                                              - "CWE_ID"
+                                              - "CAPEC_ID"
+                                              - "CCE_ID"
+                                              - "CPE_NAME"
+                                            appearsRandom: !<boolean> {}
+                                            isObfuscated: !<boolean> {}
+                                            obfuscationAlgorithmRef: !<string> {}
+                                            isDefanged: !<boolean> {}
+                                            defangingAlgorithmRef: !<string> {}
+                                            refangingTransformType: !<string> {}
+                                            refangingTransform: !<string> {}
+                                            observedEncoding: !<string> {}
+                                            condition: !<string>
+                                              enum:
+                                              - "EQUALS"
+                                              - "DOES_NOT_EQUAL"
+                                              - "CONTAINS"
+                                              - "DOES_NOT_CONTAIN"
+                                              - "STARTS_WITH"
+                                              - "ENDS_WITH"
+                                              - "GREATER_THAN"
+                                              - "GREATER_THAN_OR_EQUAL"
+                                              - "LESS_THAN"
+                                              - "LESS_THAN_OR_EQUAL"
+                                              - "INCLUSIVE_BETWEEN"
+                                              - "EXCLUSIVE_BETWEEN"
+                                              - "FITS_PATTERN"
+                                              - "BITWISE_AND"
+                                              - "BITWISE_OR"
+                                              - "BITWISE_XOR"
+                                            isCaseSensitive: !<boolean> {}
+                                            applyCondition: !<string>
+                                              enum:
+                                              - "ANY"
+                                              - "ALL"
+                                              - "NONE"
+                                            delimiter: !<string> {}
+                                            bitMask: !<array>
+                                              items: !<integer> {}
+                                            patternType: !<string>
+                                              enum:
+                                              - "REGEX"
+                                              - "BINARY"
+                                              - "X_PATH"
+                                            regexSyntax: !<string> {}
+                                            hasChanged: !<boolean> {}
+                                            trend: !<boolean> {}
+                                        blockHash: !<object>
+                                          id: "urn:jsonschema:org:mitre:cybox:common_2:FuzzyHashBlockType"
+                                          properties:
+                                            blockHashValue: !<object>
+                                              id: "urn:jsonschema:org:mitre:cybox:common_2:HashValueType"
+                                              properties:
+                                                fuzzyHashValue: !<object>
+                                                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:FuzzyHashValueType"
+                                                simpleHashValue: !<object>
+                                                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:SimpleHashValueType"
+                                            segmentCount: !<object>
+                                              $ref: "urn:jsonschema:org:mitre:cybox:common_2:IntegerObjectPropertyType"
+                                            segments: !<object>
+                                              id: "urn:jsonschema:org:mitre:cybox:common_2:HashSegmentsType"
+                                              properties:
+                                                segments: !<array>
+                                                  items: !<object>
+                                                    id: "urn:jsonschema:org:mitre:cybox:common_2:HashSegmentType"
+                                                    properties:
+                                                      triggerPoint: !<object>
+                                                        id: "urn:jsonschema:org:mitre:cybox:common_2:HexBinaryObjectPropertyType"
+                                                        properties:
+                                                          value: !<any> {}
+                                                          id: !<string> {}
+                                                          idref: !<string> {}
+                                                          datatype: !<string>
+                                                            enum:
+                                                            - "STRING"
+                                                            - "INT"
+                                                            - "FLOAT"
+                                                            - "DATE"
+                                                            - "POSITIVE_INTEGER"
+                                                            - "UNSIGNED_INT"
+                                                            - "DATE_TIME"
+                                                            - "TIME"
+                                                            - "BOOLEAN"
+                                                            - "NAME"
+                                                            - "LONG"
+                                                            - "UNSIGNED_LONG"
+                                                            - "DURATION"
+                                                            - "DOUBLE"
+                                                            - "NON_NEGATIVE_INTEGER"
+                                                            - "HEX_BINARY"
+                                                            - "ANY_URI"
+                                                            - "BASE_64_BINARY"
+                                                            - "I_PV_4_ADDRESS"
+                                                            - "I_PV_6_ADDRESS"
+                                                            - "HOST_NAME"
+                                                            - "MAC_ADDRESS"
+                                                            - "DOMAIN_NAME"
+                                                            - "URI"
+                                                            - "TIME_ZONE"
+                                                            - "OCTAL"
+                                                            - "BINARY"
+                                                            - "BIN_HEX"
+                                                            - "SUBNET_MASK"
+                                                            - "UUID_GUID"
+                                                            - "COLLECTION"
+                                                            - "CVE_ID"
+                                                            - "CWE_ID"
+                                                            - "CAPEC_ID"
+                                                            - "CCE_ID"
+                                                            - "CPE_NAME"
+                                                          appearsRandom: !<boolean> {}
+                                                          isObfuscated: !<boolean> {}
+                                                          obfuscationAlgorithmRef: !<string> {}
+                                                          isDefanged: !<boolean> {}
+                                                          defangingAlgorithmRef: !<string> {}
+                                                          refangingTransformType: !<string> {}
+                                                          refangingTransform: !<string> {}
+                                                          observedEncoding: !<string> {}
+                                                          condition: !<string>
+                                                            enum:
+                                                            - "EQUALS"
+                                                            - "DOES_NOT_EQUAL"
+                                                            - "CONTAINS"
+                                                            - "DOES_NOT_CONTAIN"
+                                                            - "STARTS_WITH"
+                                                            - "ENDS_WITH"
+                                                            - "GREATER_THAN"
+                                                            - "GREATER_THAN_OR_EQUAL"
+                                                            - "LESS_THAN"
+                                                            - "LESS_THAN_OR_EQUAL"
+                                                            - "INCLUSIVE_BETWEEN"
+                                                            - "EXCLUSIVE_BETWEEN"
+                                                            - "FITS_PATTERN"
+                                                            - "BITWISE_AND"
+                                                            - "BITWISE_OR"
+                                                            - "BITWISE_XOR"
+                                                          isCaseSensitive: !<boolean> {}
+                                                          applyCondition: !<string>
+                                                            enum:
+                                                            - "ANY"
+                                                            - "ALL"
+                                                            - "NONE"
+                                                          delimiter: !<string> {}
+                                                          bitMask: !<array>
+                                                            items: !<integer> {}
+                                                          patternType: !<string>
+                                                            enum:
+                                                            - "REGEX"
+                                                            - "BINARY"
+                                                            - "X_PATH"
+                                                          regexSyntax: !<string> {}
+                                                          hasChanged: !<boolean> {}
+                                                          trend: !<boolean> {}
+                                                      segmentHash: !<object>
+                                                        $ref: "urn:jsonschema:org:mitre:cybox:common_2:HashValueType"
+                                                      rawSegmentContent: !<any> {}
+                        toolConfiguration: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:ToolConfigurationType"
+                          properties:
+                            configurationSettings: !<object>
+                              id: "urn:jsonschema:org:mitre:cybox:common_2:ConfigurationSettingsType"
+                              properties:
+                                configurationSettings: !<array>
+                                  items: !<object>
+                                    id: "urn:jsonschema:org:mitre:cybox:common_2:ConfigurationSettingType"
+                                    properties:
+                                      itemName: !<string> {}
+                                      itemValue: !<string> {}
+                                      itemType: !<string> {}
+                                      itemDescription: !<string> {}
+                            dependencies: !<object>
+                              id: "urn:jsonschema:org:mitre:cybox:common_2:DependenciesType"
+                              properties:
+                                dependencies: !<array>
+                                  items: !<object>
+                                    id: "urn:jsonschema:org:mitre:cybox:common_2:DependencyType"
+                                    properties:
+                                      dependencyType: !<string> {}
+                                      dependencyDescription: !<object>
+                                        $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                            usageContextAssumptions: !<object>
+                              id: "urn:jsonschema:org:mitre:cybox:common_2:UsageContextAssumptionsType"
+                              properties:
+                                usageContextAssumptions: !<array>
+                                  items: !<object>
+                                    $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                            internationalizationSettings: !<object>
+                              id: "urn:jsonschema:org:mitre:cybox:common_2:InternationalizationSettingsType"
+                              properties:
+                                internalStrings: !<array>
+                                  items: !<object>
+                                    id: "urn:jsonschema:org:mitre:cybox:common_2:InternalStringsType"
+                                    properties:
+                                      key: !<string> {}
+                                      content: !<string> {}
+                            buildInformation: !<object>
+                              id: "urn:jsonschema:org:mitre:cybox:common_2:BuildInformationType"
+                              properties:
+                                buildID: !<string> {}
+                                buildProject: !<string> {}
+                                buildUtility: !<object>
+                                  id: "urn:jsonschema:org:mitre:cybox:common_2:BuildUtilityType"
+                                  properties:
+                                    buildUtilityName: !<string> {}
+                                    buildUtilityPlatformSpecification: !<object>
+                                      id: "urn:jsonschema:org:mitre:cybox:common_2:PlatformSpecificationType"
+                                      properties:
+                                        description: !<object>
+                                          $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                                        identifiers: !<array>
+                                          items: !<object>
+                                            id: "urn:jsonschema:org:mitre:cybox:common_2:PlatformIdentifierType"
+                                            properties:
+                                              value: !<any> {}
+                                              id: !<string> {}
+                                              idref: !<string> {}
+                                              datatype: !<string>
+                                                enum:
+                                                - "STRING"
+                                                - "INT"
+                                                - "FLOAT"
+                                                - "DATE"
+                                                - "POSITIVE_INTEGER"
+                                                - "UNSIGNED_INT"
+                                                - "DATE_TIME"
+                                                - "TIME"
+                                                - "BOOLEAN"
+                                                - "NAME"
+                                                - "LONG"
+                                                - "UNSIGNED_LONG"
+                                                - "DURATION"
+                                                - "DOUBLE"
+                                                - "NON_NEGATIVE_INTEGER"
+                                                - "HEX_BINARY"
+                                                - "ANY_URI"
+                                                - "BASE_64_BINARY"
+                                                - "I_PV_4_ADDRESS"
+                                                - "I_PV_6_ADDRESS"
+                                                - "HOST_NAME"
+                                                - "MAC_ADDRESS"
+                                                - "DOMAIN_NAME"
+                                                - "URI"
+                                                - "TIME_ZONE"
+                                                - "OCTAL"
+                                                - "BINARY"
+                                                - "BIN_HEX"
+                                                - "SUBNET_MASK"
+                                                - "UUID_GUID"
+                                                - "COLLECTION"
+                                                - "CVE_ID"
+                                                - "CWE_ID"
+                                                - "CAPEC_ID"
+                                                - "CCE_ID"
+                                                - "CPE_NAME"
+                                              appearsRandom: !<boolean> {}
+                                              isObfuscated: !<boolean> {}
+                                              obfuscationAlgorithmRef: !<string> {}
+                                              isDefanged: !<boolean> {}
+                                              defangingAlgorithmRef: !<string> {}
+                                              refangingTransformType: !<string> {}
+                                              refangingTransform: !<string> {}
+                                              observedEncoding: !<string> {}
+                                              condition: !<string>
+                                                enum:
+                                                - "EQUALS"
+                                                - "DOES_NOT_EQUAL"
+                                                - "CONTAINS"
+                                                - "DOES_NOT_CONTAIN"
+                                                - "STARTS_WITH"
+                                                - "ENDS_WITH"
+                                                - "GREATER_THAN"
+                                                - "GREATER_THAN_OR_EQUAL"
+                                                - "LESS_THAN"
+                                                - "LESS_THAN_OR_EQUAL"
+                                                - "INCLUSIVE_BETWEEN"
+                                                - "EXCLUSIVE_BETWEEN"
+                                                - "FITS_PATTERN"
+                                                - "BITWISE_AND"
+                                                - "BITWISE_OR"
+                                                - "BITWISE_XOR"
+                                              isCaseSensitive: !<boolean> {}
+                                              applyCondition: !<string>
+                                                enum:
+                                                - "ANY"
+                                                - "ALL"
+                                                - "NONE"
+                                              delimiter: !<string> {}
+                                              bitMask: !<array>
+                                                items: !<integer> {}
+                                              patternType: !<string>
+                                                enum:
+                                                - "REGEX"
+                                                - "BINARY"
+                                                - "X_PATH"
+                                              regexSyntax: !<string> {}
+                                              hasChanged: !<boolean> {}
+                                              trend: !<boolean> {}
+                                              system: !<string> {}
+                                              systemRef: !<string> {}
+                                buildVersion: !<string> {}
+                                buildLabel: !<string> {}
+                                compilers: !<object>
+                                  id: "urn:jsonschema:org:mitre:cybox:common_2:CompilersType"
+                                  properties:
+                                    compilers: !<array>
+                                      items: !<object>
+                                        id: "urn:jsonschema:org:mitre:cybox:common_2:CompilerType"
+                                        properties:
+                                          compilerInformalDescription: !<object>
+                                            id: "urn:jsonschema:org:mitre:cybox:common_2:CompilerInformalDescriptionType"
+                                            properties:
+                                              compilerName: !<string> {}
+                                              compilerVersion: !<string> {}
+                                          compilerPlatformSpecification: !<object>
+                                            $ref: "urn:jsonschema:org:mitre:cybox:common_2:PlatformSpecificationType"
+                                compilationDate: !<object>
+                                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeWithPrecisionType"
+                                buildConfiguration: !<object>
+                                  id: "urn:jsonschema:org:mitre:cybox:common_2:BuildConfigurationType"
+                                  properties:
+                                    configurationSettingDescription: !<string> {}
+                                    configurationSettings: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:ConfigurationSettingsType"
+                                buildScript: !<string> {}
+                                libraries: !<object>
+                                  id: "urn:jsonschema:org:mitre:cybox:common_2:LibrariesType"
+                                  properties:
+                                    library: !<object>
+                                      id: "urn:jsonschema:org:mitre:cybox:common_2:LibraryType"
+                                      properties:
+                                        name: !<string> {}
+                                        version: !<string> {}
+                                buildOutputLog: !<string> {}
+                        executionEnvironment: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:ExecutionEnvironmentType"
+                          properties:
+                            system: !<object>
+                              id: "urn:jsonschema:org:mitre:cybox:common_2:ObjectPropertiesType"
+                              properties:
+                                customProperties: !<object>
+                                  id: "urn:jsonschema:org:mitre:cybox:common_2:CustomPropertiesType"
+                                  properties:
+                                    properties: !<array>
+                                      items: !<object>
+                                        id: "urn:jsonschema:org:mitre:cybox:common_2:Property"
+                                        properties:
+                                          value: !<any> {}
+                                          id: !<string> {}
+                                          idref: !<string> {}
+                                          datatype: !<string>
+                                            enum:
+                                            - "STRING"
+                                            - "INT"
+                                            - "FLOAT"
+                                            - "DATE"
+                                            - "POSITIVE_INTEGER"
+                                            - "UNSIGNED_INT"
+                                            - "DATE_TIME"
+                                            - "TIME"
+                                            - "BOOLEAN"
+                                            - "NAME"
+                                            - "LONG"
+                                            - "UNSIGNED_LONG"
+                                            - "DURATION"
+                                            - "DOUBLE"
+                                            - "NON_NEGATIVE_INTEGER"
+                                            - "HEX_BINARY"
+                                            - "ANY_URI"
+                                            - "BASE_64_BINARY"
+                                            - "I_PV_4_ADDRESS"
+                                            - "I_PV_6_ADDRESS"
+                                            - "HOST_NAME"
+                                            - "MAC_ADDRESS"
+                                            - "DOMAIN_NAME"
+                                            - "URI"
+                                            - "TIME_ZONE"
+                                            - "OCTAL"
+                                            - "BINARY"
+                                            - "BIN_HEX"
+                                            - "SUBNET_MASK"
+                                            - "UUID_GUID"
+                                            - "COLLECTION"
+                                            - "CVE_ID"
+                                            - "CWE_ID"
+                                            - "CAPEC_ID"
+                                            - "CCE_ID"
+                                            - "CPE_NAME"
+                                          appearsRandom: !<boolean> {}
+                                          isObfuscated: !<boolean> {}
+                                          obfuscationAlgorithmRef: !<string> {}
+                                          isDefanged: !<boolean> {}
+                                          defangingAlgorithmRef: !<string> {}
+                                          refangingTransformType: !<string> {}
+                                          refangingTransform: !<string> {}
+                                          observedEncoding: !<string> {}
+                                          condition: !<string>
+                                            enum:
+                                            - "EQUALS"
+                                            - "DOES_NOT_EQUAL"
+                                            - "CONTAINS"
+                                            - "DOES_NOT_CONTAIN"
+                                            - "STARTS_WITH"
+                                            - "ENDS_WITH"
+                                            - "GREATER_THAN"
+                                            - "GREATER_THAN_OR_EQUAL"
+                                            - "LESS_THAN"
+                                            - "LESS_THAN_OR_EQUAL"
+                                            - "INCLUSIVE_BETWEEN"
+                                            - "EXCLUSIVE_BETWEEN"
+                                            - "FITS_PATTERN"
+                                            - "BITWISE_AND"
+                                            - "BITWISE_OR"
+                                            - "BITWISE_XOR"
+                                          isCaseSensitive: !<boolean> {}
+                                          applyCondition: !<string>
+                                            enum:
+                                            - "ANY"
+                                            - "ALL"
+                                            - "NONE"
+                                          delimiter: !<string> {}
+                                          bitMask: !<array>
+                                            items: !<integer> {}
+                                          patternType: !<string>
+                                            enum:
+                                            - "REGEX"
+                                            - "BINARY"
+                                            - "X_PATH"
+                                          regexSyntax: !<string> {}
+                                          hasChanged: !<boolean> {}
+                                          trend: !<boolean> {}
+                                          name: !<string> {}
+                                          description: !<string> {}
+                                objectReference: !<string> {}
+                            userAccountInfo: !<object>
+                              $ref: "urn:jsonschema:org:mitre:cybox:common_2:ObjectPropertiesType"
+                            commandLine: !<string> {}
+                            startTime: !<object>
+                              $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeWithPrecisionType"
+                        errors: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:ErrorsType"
+                          properties:
+                            errors: !<array>
+                              items: !<object>
+                                id: "urn:jsonschema:org:mitre:cybox:common_2:ErrorType"
+                                properties:
+                                  errorType: !<string> {}
+                                  errorCount: !<integer> {}
+                                  errorInstances: !<object>
+                                    id: "urn:jsonschema:org:mitre:cybox:common_2:ErrorInstancesType"
+                                    properties:
+                                      errorInstances: !<array>
+                                        items: !<string> {}
+                        metadatas: !<array>
+                          items: !<object>
+                            id: "urn:jsonschema:org:mitre:cybox:common_2:MetadataType"
+                            properties:
+                              value: !<string> {}
+                              subData: !<array>
+                                items: !<object>
+                                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:MetadataType"
+                              type: !<string> {}
+                        compensationModel: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:CompensationModelType"
+                          properties:
+                            value: !<any> {}
+                            id: !<string> {}
+                            idref: !<string> {}
+                            datatype: !<string>
+                              enum:
+                              - "STRING"
+                              - "INT"
+                              - "FLOAT"
+                              - "DATE"
+                              - "POSITIVE_INTEGER"
+                              - "UNSIGNED_INT"
+                              - "DATE_TIME"
+                              - "TIME"
+                              - "BOOLEAN"
+                              - "NAME"
+                              - "LONG"
+                              - "UNSIGNED_LONG"
+                              - "DURATION"
+                              - "DOUBLE"
+                              - "NON_NEGATIVE_INTEGER"
+                              - "HEX_BINARY"
+                              - "ANY_URI"
+                              - "BASE_64_BINARY"
+                              - "I_PV_4_ADDRESS"
+                              - "I_PV_6_ADDRESS"
+                              - "HOST_NAME"
+                              - "MAC_ADDRESS"
+                              - "DOMAIN_NAME"
+                              - "URI"
+                              - "TIME_ZONE"
+                              - "OCTAL"
+                              - "BINARY"
+                              - "BIN_HEX"
+                              - "SUBNET_MASK"
+                              - "UUID_GUID"
+                              - "COLLECTION"
+                              - "CVE_ID"
+                              - "CWE_ID"
+                              - "CAPEC_ID"
+                              - "CCE_ID"
+                              - "CPE_NAME"
+                            appearsRandom: !<boolean> {}
+                            isObfuscated: !<boolean> {}
+                            obfuscationAlgorithmRef: !<string> {}
+                            isDefanged: !<boolean> {}
+                            defangingAlgorithmRef: !<string> {}
+                            refangingTransformType: !<string> {}
+                            refangingTransform: !<string> {}
+                            observedEncoding: !<string> {}
+                            condition: !<string>
+                              enum:
+                              - "EQUALS"
+                              - "DOES_NOT_EQUAL"
+                              - "CONTAINS"
+                              - "DOES_NOT_CONTAIN"
+                              - "STARTS_WITH"
+                              - "ENDS_WITH"
+                              - "GREATER_THAN"
+                              - "GREATER_THAN_OR_EQUAL"
+                              - "LESS_THAN"
+                              - "LESS_THAN_OR_EQUAL"
+                              - "INCLUSIVE_BETWEEN"
+                              - "EXCLUSIVE_BETWEEN"
+                              - "FITS_PATTERN"
+                              - "BITWISE_AND"
+                              - "BITWISE_OR"
+                              - "BITWISE_XOR"
+                            isCaseSensitive: !<boolean> {}
+                            applyCondition: !<string>
+                              enum:
+                              - "ANY"
+                              - "ALL"
+                              - "NONE"
+                            delimiter: !<string> {}
+                            bitMask: !<array>
+                              items: !<integer> {}
+                            patternType: !<string>
+                              enum:
+                              - "REGEX"
+                              - "BINARY"
+                              - "X_PATH"
+                            regexSyntax: !<string> {}
+                            hasChanged: !<boolean> {}
+                            trend: !<boolean> {}
+                        id: !<string> {}
+                        idref: !<string> {}
+              references: !<object>
+                id: "urn:jsonschema:org:mitre:stix:common_1:ReferencesType"
+                properties:
+                  references: !<array>
+                    items: !<string> {}
+          confidenceAssertionChain: !<object>
+            id: "urn:jsonschema:org:mitre:stix:common_1:ConfidenceAssertionChainType"
+            properties:
+              confidenceAssertions: !<array>
+                items: !<object>
+                  $ref: "urn:jsonschema:org:mitre:stix:common_1:ConfidenceType"
+          timestamp: !<integer>
+            format: "utc-millisec"
+          timestampPrecision: !<string>
+            enum:
+            - "YEAR"
+            - "MONTH"
+            - "DAY"
+            - "HOUR"
+            - "MINUTE"
+            - "SECOND"
+  parameterObservables: !<object>
+    id: "urn:jsonschema:org:mitre:cybox:cybox_2:Observables"
+    properties:
+      observablePackageSource: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:common_2:MeasureSourceType"
+        properties:
+          informationSourceType: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+          toolType: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+          description: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+          contributors: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:common_2:PersonnelType"
+            properties:
+              contributors: !<array>
+                items: !<object>
+                  id: "urn:jsonschema:org:mitre:cybox:common_2:ContributorType"
+                  properties:
+                    role: !<string> {}
+                    name: !<string> {}
+                    email: !<string> {}
+                    phone: !<string> {}
+                    organization: !<string> {}
+                    date: !<object>
+                      id: "urn:jsonschema:org:mitre:cybox:common_2:DateRangeType"
+                      properties:
+                        startDate: !<object>
+                          id: "urn:jsonschema:org:mitre:cybox:common_2:DateWithPrecisionType"
+                          properties:
+                            value: !<integer>
+                              format: "utc-millisec"
+                            precision: !<string>
+                              enum:
+                              - "YEAR"
+                              - "MONTH"
+                              - "DAY"
+                        endDate: !<object>
+                          $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateWithPrecisionType"
+                    contributionLocation: !<string> {}
+          time: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:TimeType"
+          observationLocation: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:common_2:LocationType"
+            properties:
+              name: !<string> {}
+              id: !<string> {}
+              idref: !<string> {}
+          tools: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:ToolsInformationType"
+          platform: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:PlatformSpecificationType"
+          system: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:ObjectPropertiesType"
+          instance: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:ObjectPropertiesType"
+          observableLocation: !<object>
+            $ref: "urn:jsonschema:org:mitre:cybox:common_2:LocationType"
+          clazz: !<string>
+            enum:
+            - "NETWORK"
+            - "SYSTEM"
+            - "SOFTWARE"
+          sourceType: !<string>
+            enum:
+            - "TOOL"
+            - "ANALYSIS"
+            - "INFORMATION_SOURCE"
+          name: !<string> {}
+          sightingCount: !<integer> {}
+      observables: !<array>
+        items: !<object>
+          id: "urn:jsonschema:org:mitre:cybox:cybox_2:Observable"
+          properties:
+            title: !<string> {}
+            description: !<object>
+              $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+            keywords: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:cybox_2:KeywordsType"
+              properties:
+                keywords: !<array>
+                  items: !<string> {}
+            observableSources: !<array>
+              items: !<object>
+                $ref: "urn:jsonschema:org:mitre:cybox:common_2:MeasureSourceType"
+            observableComposition: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:cybox_2:ObservableCompositionType"
+              properties:
+                observables: !<array>
+                  items: !<object>
+                    $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:Observable"
+                operator: !<string>
+                  enum:
+                  - "AND"
+                  - "OR"
+            event: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:cybox_2:Event"
+              properties:
+                events: !<array>
+                  items: !<object>
+                    $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:Event"
+                type: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                description: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                observationMethod: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:MeasureSourceType"
+                actions: !<object>
+                  id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionsType"
+                  properties:
+                    actions: !<array>
+                      items: !<object>
+                        id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionType"
+                        properties:
+                          type: !<object>
+                            $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                          name: !<object>
+                            $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                          description: !<object>
+                            $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                          actionAliases: !<object>
+                            id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionAliasesType"
+                            properties:
+                              actionAlias: !<array>
+                                items: !<string> {}
+                          actionArguments: !<object>
+                            id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionArgumentsType"
+                            properties:
+                              actionArguments: !<array>
+                                items: !<object>
+                                  id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionArgumentType"
+                                  properties:
+                                    argumentName: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                                    argumentValue: !<string> {}
+                          location: !<object>
+                            $ref: "urn:jsonschema:org:mitre:cybox:common_2:LocationType"
+                          discoveryMethod: !<object>
+                            $ref: "urn:jsonschema:org:mitre:cybox:common_2:MeasureSourceType"
+                          associatedObjects: !<object>
+                            id: "urn:jsonschema:org:mitre:cybox:cybox_2:AssociatedObjectsType"
+                            properties:
+                              associatedObjects: !<array>
+                                items: !<object>
+                                  id: "urn:jsonschema:org:mitre:cybox:cybox_2:AssociatedObjectType"
+                                  properties:
+                                    state: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                                    description: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                                    properties: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:ObjectPropertiesType"
+                                    domainSpecificObjectProperties: !<object>
+                                      id: "urn:jsonschema:org:mitre:cybox:cybox_2:DomainSpecificObjectPropertiesType"
+                                    location: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:LocationType"
+                                    relatedObjects: !<object>
+                                      id: "urn:jsonschema:org:mitre:cybox:cybox_2:RelatedObjectsType"
+                                      properties:
+                                        relatedObjects: !<array>
+                                          items: !<object>
+                                            id: "urn:jsonschema:org:mitre:cybox:cybox_2:RelatedObjectType"
+                                            properties:
+                                              state: !<object>
+                                                $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                                              description: !<object>
+                                                $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                                              properties: !<object>
+                                                $ref: "urn:jsonschema:org:mitre:cybox:common_2:ObjectPropertiesType"
+                                              domainSpecificObjectProperties: !<object>
+                                                $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:DomainSpecificObjectPropertiesType"
+                                              location: !<object>
+                                                $ref: "urn:jsonschema:org:mitre:cybox:common_2:LocationType"
+                                              relatedObjects: !<object>
+                                                $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:RelatedObjectsType"
+                                              definedEffect: !<object>
+                                                id: "urn:jsonschema:org:mitre:cybox:cybox_2:DefinedEffectType"
+                                                properties:
+                                                  effectType: !<string>
+                                                    enum:
+                                                    - "STATE_CHANGED"
+                                                    - "DATA_READ"
+                                                    - "DATA_WRITTEN"
+                                                    - "DATA_SENT"
+                                                    - "DATA_RECEIVED"
+                                                    - "PROPERTIES_READ"
+                                                    - "PROPERTIES_ENUMERATED"
+                                                    - "VALUES_ENUMERATED"
+                                                    - "CONTROL_CODE_SENT"
+                                              discoveryMethod: !<object>
+                                                $ref: "urn:jsonschema:org:mitre:cybox:common_2:MeasureSourceType"
+                                              id: !<string> {}
+                                              idref: !<string> {}
+                                              hasChanged: !<boolean> {}
+                                              relationship: !<object>
+                                                $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                                    definedEffect: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:DefinedEffectType"
+                                    discoveryMethod: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:MeasureSourceType"
+                                    id: !<string> {}
+                                    idref: !<string> {}
+                                    hasChanged: !<boolean> {}
+                                    associationType: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                                    actionPertinentObjectProperties: !<object>
+                                      id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionPertinentObjectPropertiesType"
+                                      properties:
+                                        properties: !<array>
+                                          items: !<object>
+                                            id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionPertinentObjectPropertyType"
+                                            properties:
+                                              name: !<string> {}
+                                              xpath: !<string> {}
+                          relationships: !<object>
+                            id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionRelationshipsType"
+                            properties:
+                              relationships: !<array>
+                                items: !<object>
+                                  id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionRelationshipType"
+                                  properties:
+                                    type: !<object>
+                                      $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                                    actionReferences: !<array>
+                                      items: !<object>
+                                        id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionReferenceType"
+                                        properties:
+                                          actionId: !<string> {}
+                          frequency: !<object>
+                            id: "urn:jsonschema:org:mitre:cybox:cybox_2:FrequencyType"
+                            properties:
+                              rate: !<number> {}
+                              units: !<string> {}
+                              scale: !<string> {}
+                              trend: !<string>
+                                enum:
+                                - "INCREASING"
+                                - "DECREASING"
+                          id: !<string> {}
+                          idref: !<string> {}
+                          ordinalPosition: !<integer> {}
+                          actionStatus: !<string>
+                            enum:
+                            - "SUCCESS"
+                            - "FAIL"
+                            - "ERROR"
+                            - "COMPLETE_FINISH"
+                            - "PENDING"
+                            - "ONGOING"
+                            - "UNKNOWN"
+                          context: !<string>
+                            enum:
+                            - "HOST"
+                            - "NETWORK"
+                          timestamp: !<integer>
+                            format: "utc-millisec"
+                          timestampPrecision: !<string> {}
+                location: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:LocationType"
+                frequency: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:FrequencyType"
+                id: !<string> {}
+                idref: !<string> {}
+            object: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:cybox_2:ObjectType"
+              properties:
+                state: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:ControlledVocabularyStringType"
+                description: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                properties: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:ObjectPropertiesType"
+                domainSpecificObjectProperties: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:DomainSpecificObjectPropertiesType"
+                location: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:LocationType"
+                relatedObjects: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:RelatedObjectsType"
+                definedEffect: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:DefinedEffectType"
+                discoveryMethod: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:MeasureSourceType"
+                id: !<string> {}
+                idref: !<string> {}
+                hasChanged: !<boolean> {}
+            patternFidelity: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:cybox_2:PatternFidelityType"
+              properties:
+                noisiness: !<string>
+                  enum:
+                  - "HIGH"
+                  - "MEDIUM"
+                  - "LOW"
+                easeOfEvasion: !<string>
+                  enum:
+                  - "HIGH"
+                  - "MEDIUM"
+                  - "LOW"
+                evasionTechniques: !<object>
+                  id: "urn:jsonschema:org:mitre:cybox:cybox_2:ObfuscationTechniquesType"
+                  properties:
+                    obfuscationTechniques: !<array>
+                      items: !<object>
+                        id: "urn:jsonschema:org:mitre:cybox:cybox_2:ObfuscationTechniqueType"
+                        properties:
+                          description: !<object>
+                            $ref: "urn:jsonschema:org:mitre:cybox:common_2:StructuredTextType"
+                          observables: !<object>
+                            $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:Observables"
+            id: !<string> {}
+            idref: !<string> {}
+            negate: !<boolean> {}
+            sightingCount: !<integer> {}
+      pools: !<object>
+        id: "urn:jsonschema:org:mitre:cybox:cybox_2:PoolsType"
+        properties:
+          eventPool: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:cybox_2:EventPoolType"
+            properties:
+              events: !<array>
+                items: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:Event"
+          actionPool: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionPoolType"
+            properties:
+              actions: !<array>
+                items: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:ActionType"
+          objectPool: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:cybox_2:ObjectPoolType"
+            properties:
+              objects: !<array>
+                items: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:cybox_2:ObjectType"
+          propertyPool: !<object>
+            id: "urn:jsonschema:org:mitre:cybox:cybox_2:PropertyPoolType"
+            properties:
+              properties: !<array>
+                items: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:Property"
+      cyboxMajorVersion: !<string> {}
+      cyboxMinorVersion: !<string> {}
+      cyboxUpdateVersion: !<string> {}
+  structuredCOA: !<object>
+    id: "urn:jsonschema:org:mitre:stix:courseofaction_1:StructuredCOAType"
+    properties:
+      id: !<string> {}
+      idref: !<string> {}
+  impact: !<object>
+    id: "urn:jsonschema:org:mitre:stix:common_1:StatementType"
+    properties:
+      value: !<object>
+        $ref: "urn:jsonschema:org:mitre:stix:common_1:ControlledVocabularyStringType"
+      descriptions: !<array>
+        items: !<object>
+          $ref: "urn:jsonschema:org:mitre:stix:common_1:StructuredTextType"
+      source: !<object>
+        $ref: "urn:jsonschema:org:mitre:stix:common_1:InformationSourceType"
+      confidence: !<object>
+        $ref: "urn:jsonschema:org:mitre:stix:common_1:ConfidenceType"
+      timestamp: !<integer>
+        format: "utc-millisec"
+      timestampPrecision: !<string>
+        enum:
+        - "YEAR"
+        - "MONTH"
+        - "DAY"
+        - "HOUR"
+        - "MINUTE"
+        - "SECOND"
+  cost: !<object>
+    $ref: "urn:jsonschema:org:mitre:stix:common_1:StatementType"
+  efficacy: !<object>
+    $ref: "urn:jsonschema:org:mitre:stix:common_1:StatementType"
+  informationSource: !<object>
+    $ref: "urn:jsonschema:org:mitre:stix:common_1:InformationSourceType"
+  handling: !<object>
+    id: "urn:jsonschema:org:mitre:data_marking:marking_1:MarkingType"
+    properties:
+      markings: !<array>
+        items: !<object>
+          id: "urn:jsonschema:org:mitre:data_marking:marking_1:MarkingSpecificationType"
+          properties:
+            controlledStructure: !<string> {}
+            markingStructures: !<array>
+              items: !<object>
+                id: "urn:jsonschema:org:mitre:data_marking:marking_1:MarkingStructureType"
+                properties:
+                  markingModelName: !<string> {}
+                  markingModelRef: !<string> {}
+                  id: !<string> {}
+                  idref: !<string> {}
+            informationSource: !<object>
+              $ref: "urn:jsonschema:org:mitre:stix:common_1:InformationSourceType"
+            id: !<string> {}
+            idref: !<string> {}
+            version: !<string> {}
+  relatedCOAs: !<object>
+    id: "urn:jsonschema:org:mitre:stix:courseofaction_1:RelatedCOAsType"
+    properties:
+      scope: !<string>
+        enum:
+        - "INCLUSIVE"
+        - "EXCLUSIVE"
+      relatedCOAs: !<array>
+        items: !<object>
+          id: "urn:jsonschema:org:mitre:stix:common_1:RelatedCourseOfActionType"
+          properties:
+            confidence: !<object>
+              $ref: "urn:jsonschema:org:mitre:stix:common_1:ConfidenceType"
+            informationSource: !<object>
+              $ref: "urn:jsonschema:org:mitre:stix:common_1:InformationSourceType"
+            relationship: !<object>
+              $ref: "urn:jsonschema:org:mitre:stix:common_1:ControlledVocabularyStringType"
+            courseOfAction: !<object>
+              id: "urn:jsonschema:org:mitre:stix:common_1:CourseOfActionBaseType"
+              properties:
+                id: !<string> {}
+                idref: !<string> {}
+                timestamp: !<integer>
+                  format: "utc-millisec"
+  relatedPackages: !<object>
+    id: "urn:jsonschema:org:mitre:stix:common_1:RelatedPackageRefsType"
+    properties:
+      packageReferences: !<array>
+        items: !<object>
+          id: "urn:jsonschema:org:mitre:stix:common_1:RelatedPackageRefType"
+          properties:
+            confidence: !<object>
+              $ref: "urn:jsonschema:org:mitre:stix:common_1:ConfidenceType"
+            informationSource: !<object>
+              $ref: "urn:jsonschema:org:mitre:stix:common_1:InformationSourceType"
+            relationship: !<object>
+              $ref: "urn:jsonschema:org:mitre:stix:common_1:ControlledVocabularyStringType"
+            idref: !<string> {}
+            timestamp: !<integer>
+              format: "utc-millisec"
+  version: !<string> {}
