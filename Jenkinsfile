@@ -55,26 +55,6 @@ apiVersion: v1
 kind: List
 items:
 - apiVersion: v1
-  data:
-    adjective: |-
-      {
-        "host": "adjective-service",
-        "port": 8080
-      }
-    http: |-
-      {
-        "address": "0.0.0.0",
-        "port": 8080
-      }
-    noun: |-
-      {
-          "host": "noun-service",
-          "port": 8080
-      }
-  kind: ConfigMap
-  metadata:
-    name: insult-config
-- apiVersion: v1
   kind: ImageStream
   metadata:
     labels:
@@ -112,15 +92,6 @@ items:
           - image: '${project}'
             imagePullPolicy: Always
             name: '${project}'
-            env:
-            - name: KUBERNETES_NAMESPACE
-              value: ${targetNamespace}
-            - name: JAVA_OPTIONS
-              value: |-
-                -Dvertx.jgroups.config=default-configs/default-jgroups-kubernetes.xml -Djava.net.preferIPv4Stack=true
-                -Dorg.slf4j.simpleLogger.log.org.jgroups=WARN -Dorg.slf4j.simpleLogger.log.org.infinispan=WARN
-            - name: JAVA_ARGS
-              value: '-cluster -cluster-port 5800'
             ports:
               - containerPort: 5800
                 protocol: TCP
