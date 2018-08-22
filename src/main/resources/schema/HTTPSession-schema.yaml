@@ -848,8 +848,6 @@ properties:
         httpprovisionalServerResponse: !<object>
           id: "urn:jsonschema:org:mitre:cybox:objects:HTTPServerResponseType"
           properties:
-            httpmessageBody: !<object>
-              $ref: "urn:jsonschema:org:mitre:cybox:objects:HTTPMessageType"
             httpstatusLine: !<object>
               id: "urn:jsonschema:org:mitre:cybox:objects:HTTPStatusLineType"
               properties:
@@ -943,5 +941,7 @@ properties:
                       $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
                     xuacompatible: !<object>
                       $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
+            httpmessageBody: !<object>
+              $ref: "urn:jsonschema:org:mitre:cybox:objects:HTTPMessageType"
         httpserverResponse: !<object>
           $ref: "urn:jsonschema:org:mitre:cybox:objects:HTTPServerResponseType"

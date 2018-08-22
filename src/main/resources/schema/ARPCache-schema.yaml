@@ -282,10 +282,10 @@ properties:
               $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
             mac: !<object>
               $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
-            dhcpserverList: !<object>
-              id: "urn:jsonschema:org:mitre:cybox:objects:DHCPServerListType"
+            ipgatewayList: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:objects:IPGatewayListType"
               properties:
-                dhcpserverAddresses: !<array>
+                ipgatewayAddresses: !<array>
                   items: !<object>
                     id: "urn:jsonschema:org:mitre:cybox:objects:Address"
                     properties:
@@ -399,23 +399,6 @@ properties:
                           regexSyntax: !<string> {}
                           hasChanged: !<boolean> {}
                           trend: !<boolean> {}
-            iplist: !<object>
-              id: "urn:jsonschema:org:mitre:cybox:objects:IPInfoListType"
-              properties:
-                ipinfos: !<array>
-                  items: !<object>
-                    id: "urn:jsonschema:org:mitre:cybox:objects:IPInfoType"
-                    properties:
-                      subnetMask: !<object>
-                        $ref: "urn:jsonschema:org:mitre:cybox:objects:Address"
-                      ipaddress: !<object>
-                        $ref: "urn:jsonschema:org:mitre:cybox:objects:Address"
-            ipgatewayList: !<object>
-              id: "urn:jsonschema:org:mitre:cybox:objects:IPGatewayListType"
-              properties:
-                ipgatewayAddresses: !<array>
-                  items: !<object>
-                    $ref: "urn:jsonschema:org:mitre:cybox:objects:Address"
             dhcpleaseExpires: !<object>
               id: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeObjectPropertyType"
               properties:
@@ -506,5 +489,22 @@ properties:
                 precision: !<string> {}
             dhcpleaseObtained: !<object>
               $ref: "urn:jsonschema:org:mitre:cybox:common_2:DateTimeObjectPropertyType"
+            dhcpserverList: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:objects:DHCPServerListType"
+              properties:
+                dhcpserverAddresses: !<array>
+                  items: !<object>
+                    $ref: "urn:jsonschema:org:mitre:cybox:objects:Address"
+            iplist: !<object>
+              id: "urn:jsonschema:org:mitre:cybox:objects:IPInfoListType"
+              properties:
+                ipinfos: !<array>
+                  items: !<object>
+                    id: "urn:jsonschema:org:mitre:cybox:objects:IPInfoType"
+                    properties:
+                      subnetMask: !<object>
+                        $ref: "urn:jsonschema:org:mitre:cybox:objects:Address"
+                      ipaddress: !<object>
+                        $ref: "urn:jsonschema:org:mitre:cybox:objects:Address"
         ipaddress: !<object>
           $ref: "urn:jsonschema:org:mitre:cybox:objects:Address"

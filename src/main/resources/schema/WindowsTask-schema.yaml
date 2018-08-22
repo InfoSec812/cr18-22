@@ -1110,9 +1110,9 @@ properties:
             icomHandlerAction: !<object>
               id: "urn:jsonschema:org:mitre:cybox:objects:IComHandlerActionType"
               properties:
-                comclassID: !<object>
-                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
                 comdata: !<object>
+                  $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
+                comclassID: !<object>
                   $ref: "urn:jsonschema:org:mitre:cybox:common_2:StringObjectPropertyType"
             iexecAction: !<object>
               id: "urn:jsonschema:org:mitre:cybox:objects:IExecActionType"

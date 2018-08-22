@@ -801,8 +801,6 @@ properties:
                 $ref: "urn:jsonschema:org:mitre:cybox:common_2:HexBinaryObjectPropertyType"
               secondPacketBanner: !<object>
                 $ref: "urn:jsonschema:org:mitre:cybox:common_2:HexBinaryObjectPropertyType"
-              mlappLabel: !<object>
-                $ref: "urn:jsonschema:org:mitre:cybox:common_2:HexBinaryObjectPropertyType"
               tcpflow: !<object>
                 id: "urn:jsonschema:org:mitre:cybox:objects:YAFTCPFlowType"
                 properties:
@@ -823,6 +821,8 @@ properties:
                   tcpsequenceNumber: !<object>
                     $ref: "urn:jsonschema:org:mitre:cybox:common_2:IntegerObjectPropertyType"
               nbytesPayload: !<object>
+                $ref: "urn:jsonschema:org:mitre:cybox:common_2:HexBinaryObjectPropertyType"
+              mlappLabel: !<object>
                 $ref: "urn:jsonschema:org:mitre:cybox:common_2:HexBinaryObjectPropertyType"
           reverseFlow: !<object>
             id: "urn:jsonschema:org:mitre:cybox:objects:YAFReverseFlowType"
