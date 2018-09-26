@@ -14,15 +14,6 @@ servers:
 paths:
   /humanreview:
     description: Human Review
-  /humanreview/pending:
-    get:
-      responses:
-        200:
-          description: 'OK'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListOfHumanReviewItems'
     options:
       summary: Return endpoint API documents
       description: When requested, this endpoint/verb combination returns documentation
@@ -34,6 +25,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/APIOptionsResultList'
+  /humanreview/pending:
+    get:
+      responses:
+        200:
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfHumanReviewItems'
   /humanreview/{stix_id}/{field}:
     put:
       description: update to support individual review
