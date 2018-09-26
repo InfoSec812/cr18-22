@@ -3,3 +3,7 @@
 .idea
 target
 example_documents.groovy
+.classpath
+.project
+nb-configuration.xml
+.settings/
